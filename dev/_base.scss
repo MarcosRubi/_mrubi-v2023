@@ -1,0 +1,116 @@
+// Estilos generales y variables 
+[data-theme="default-light"] {
+    --bg-color: #f5f5f5;
+    --text-color: #212121;
+    --color-link: rgba(75, 117, 212, 1);
+    --color-hover: rgb(6, 196, 158);
+    --color-link-alpha: rgba(75, 117, 212, 0.8);
+    --color-hover-alpha: rgba(6, 196, 158, 0.8);
+    --bg-footer: rgb(207, 216, 220);
+    --font-title: "Telex", sans-serif;
+}
+
+[data-theme="default-dark"] {
+    --bg-color: #0e0f26;
+    --text-color: #fffcff;
+    --color-link: rgb(106, 149, 249);
+    --color-hover: rgba(168, 219, 210, 1);
+    --color-link-alpha: rgba(75, 117, 212, 0.8);
+    --color-hover-alpha: rgba(168, 219, 210, 0.8);
+    --bg-footer: #212121;
+    --font-title: "Telex", sans-serif;
+}
+
+[data-theme="purple-light"] {
+    --bg-color: #f5f5f5;
+    --text-color: #212121;
+    --color-link: rgb(67, 69, 134);
+    --color-hover: rgb(70, 178, 182);
+    --color-link-alpha: rgba(67, 69, 134, 0.8);
+    --color-hover-alpha: rgba(60, 143, 157, 0.8);
+    --bg-footer: rgb(207, 216, 220);
+    --font-title: "Telex", sans-serif;
+}
+
+[data-theme="purple-dark"] {
+    --bg-color: #0e0f26;
+    --text-color: #fffcff;
+    --color-link: #9a9cea;
+    --color-hover: #a2dcee;
+    --color-link-alpha: rgba(162, 185, 238, 0.8);
+    --color-hover-alpha: rgba(173, 238, 226, 0.8);
+    --bg-footer: #212121;
+    --font-title: "Telex", sans-serif;
+}
+
+[data-theme="gray-light"] {
+    --bg-color: #f5f5f5;
+    --text-color: #212121;
+    --color-link: rgba(43, 71, 89, 1);
+    --color-hover: rgb(234, 53, 36);
+    --color-link-alpha: rgba(21, 47, 62, 0.8);
+    --color-hover-alpha: rgba(231, 47, 30, 0.8);
+    --bg-footer: rgb(207, 216, 220);
+    --font-title: "Telex", sans-serif;
+}
+
+[data-theme="gray-dark"] {
+    --bg-color: #0e0f26;
+    --text-color: #fffcff;
+    --color-link: #78a6c8;
+    --color-hover: #e65c4f;
+    --color-link-alpha: rgba(100, 166, 208, 0.8);
+    --color-hover-alpha: rgba(230, 92, 79, 0.8);
+    --bg-footer: #212121;
+    --font-title: "Telex", sans-serif;
+}
+
+[data-theme="green-light"] {
+    --bg-color: #f5f5f5;
+    --text-color: #212121;
+    --color-link: #4ec1ae;
+    --color-hover: #c5a56f;
+    --color-link-alpha: rgba(57, 147, 132, 0.8);
+    --color-hover-alpha: rgba(204, 173, 118, 0.8);
+    --bg-footer: rgb(207, 216, 220);
+    --font-title: "Telex", sans-serif;
+}
+
+[data-theme="green-dark"] {
+    --bg-color: #0e0f26;
+    --text-color: #fffcff;
+    --color-link: #53d2bd;
+    --color-hover: #f6d08d;
+    --color-link-alpha: rgba(83, 210, 189, 0.8);
+    --color-hover-alpha: rgba(246, 208, 141, 0.8);
+    --bg-footer: #212121;
+    --font-title: "Telex", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0px auto;
+    width: 95%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.jc-between {
+    justify-content: space-between;
+}
+
+.p-fixed {
+    position: fixed;
+}
