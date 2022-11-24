@@ -19,6 +19,7 @@ html(lang="es" data-theme="default-dark")
         link(rel="shortcut icon" href="images/favicon.ico" type="image/x-icon")
         title Portafolio | Marcos Rubí
         link(rel="stylesheet", href="css/main.css")
+        script(src="https://kit.fontawesome.com/87b8bff04b.js" crossorigin="anonymous")
     body 
         header(class="menu p-fixed")
             div(class="container")
@@ -31,10 +32,33 @@ html(lang="es" data-theme="default-dark")
                         span(class="line")
                     div(class="menu__content")
                         div(class="menu__header d-flex align-center jc-between container")
-                            a(href="#" class="logo d-flex align-center")
+                            div(class="logo d-flex align-center")
                                 img(src="images/logo.webp", alt="Logo de Marcos Rubí" class="d-flex")
                                 span Marcos Rubí
                             div(class="menu__close")
                                 span(class="line")
                                 span(class="line")
+                        nav
+                            ul(class="d-flex align-center flex-row-xl") 
+                                li
+                                    a(href="#") Sobre Mí
+                                li
+                                    a(href="#") Proyectos
+                                li
+                                    a(href="#") Experiencia
+                                li
+                                    a(href="#") Certificados
+                                li
+                                    a(href="#") Contactar
+                        div(class="menu__footer container d-flex align-center jc-between")
+                            a(href="#" class="btn btn-secondary"): span Enviar Correo 
+                            ul(class="d-flex align-center social-list")
+                                li
+                                    a: i(class="fab fa-linkedin-in")
+                                li
+                                    a: i(class="fa fa-facebook-f")
+                                li
+                                    a: i(class="fa fa-twitter")
+                                li
+                                    a: i(class="fa fa-instagram")
         script(src="js/scripts.js") 

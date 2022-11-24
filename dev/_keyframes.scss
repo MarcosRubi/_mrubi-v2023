@@ -1,0 +1,119 @@
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes menuContentVisible {
+    0% {
+        top: -100%;
+    }
+
+    50% {
+        top: -15%;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+@keyframes menuContentVisible-xl {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: -15%;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0%;
+    }
+}
+
+@keyframes borderHeader {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes borderHeader-xl {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes menuCloseLine1 {
+
+    0%,
+    60% {
+        transform: translate(5px, 0px);
+        width: 10%;
+    }
+
+    50%,
+    100% {
+        width: 100%;
+        transform: translate(8px, 9px);
+    }
+
+    51% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes menuCloseLine2 {
+
+    0%,
+    60% {
+        width: 10%;
+        transform: translate(10px, 15px);
+    }
+
+    50%,
+    100% {
+        width: 100%;
+        transform: translate(-7px, 7px);
+    }
+
+    51% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes menuHamburguerLine {
+    0% {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    50% {
+        width: 10%;
+        margin-left: 90%;
+    }
+
+    51% {
+        opacity: 0;
+    }
+}

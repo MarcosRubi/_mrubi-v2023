@@ -4,5 +4,8 @@
         flex-direction: column;
         height: 100%;
     }
+    .flex-row-xl{
+        flex-direction: row
+    }
     @include menu-xl;
 }

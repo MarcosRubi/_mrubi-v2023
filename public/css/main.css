@@ -99,6 +99,13 @@ body {
 a {
   text-decoration: none;
   color: var(--color-link);
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  display: block;
+  width: 100%;
 }
 
 .container {
@@ -123,6 +130,10 @@ a {
   position: fixed;
 }
 
+.flex-row-xl {
+  flex-direction: column;
+}
+
 .menu {
   padding: 1rem 0;
   width: 100%;
@@ -138,12 +149,20 @@ a {
 }
 .menu .logo {
   transition: transform 300ms;
+  color: var(--text-color);
+  animation: fadeIn 0.5s linear;
+}
+.menu .logo span {
+  padding-left: 0.5rem;
 }
 .menu .logo:hover {
   transform: scale(1.1);
 }
 .menu .logo img {
   max-width: 32px;
+}
+.menu__hamburguer {
+  animation: fadeIn 1s linear;
 }
 .menu__hamburguer, .menu__close {
   position: relative;
@@ -188,7 +207,6 @@ a {
 }
 .menu__close {
   opacity: 0;
-  transition: opacity 1.25s;
 }
 .menu__close span {
   margin-top: 0;
@@ -218,18 +236,115 @@ a {
   background-color: var(--bg-footer);
   transition: top 0.5s;
 }
-.menu__content .logo {
-  opacity: 0;
-  transition: opacity 2.5s;
-}
 .menu__content.visible {
   top: 0%;
   animation: menuContentVisible 0.5s linear;
 }
-.menu__content.visible .menu__close, .menu__content.visible .logo {
+.menu__content.visible .menu__close {
+  animation: fadeIn 1.5s linear;
   opacity: 1;
 }
+.menu__content .logo {
+  pointer-events: none;
+}
+.menu__content nav {
+  text-align: center;
+  margin-top: 1rem;
+}
+.menu__content nav a {
+  font-size: 1.5rem;
+  display: block;
+  padding: 1.5rem;
+}
+.menu__header, .menu__footer {
+  height: 2rem;
+  padding: 1rem 0;
+  z-index: 100;
+}
+.menu nav {
+  height: calc(100% - 6rem);
+  z-index: 5;
+}
+.menu nav a {
+  position: relative;
+  transition: color 300ms;
+}
+.menu nav a:hover {
+  color: var(--color-hover);
+}
+.menu nav a:hover::after {
+  width: 90%;
+}
+.menu nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 2px;
+  width: 0px;
+  max-width: 8rem;
+  transition: width 1s;
+  background-color: var(--color-hover);
+  transform: translate(-50%, -1rem);
+}
+.menu .social-list a {
+  transition: all 300ms;
+  padding: 0.5rem 0.75rem;
+  display: block;
+}
+.menu .social-list a:hover {
+  color: var(--color-hover);
+  transform: scale(1.25);
+}
 
+.btn {
+  padding: 1rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  position: relative;
+  overflow: hidden;
+}
+.btn span {
+  position: relative;
+  z-index: 10;
+  color: var(--text-color);
+  transition: color 0.75s;
+}
+
+.btn-secondary {
+  border: 1px solid var(--color-hover);
+}
+.btn-secondary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 1px;
+  background-color: var(--color-hover);
+  border-radius: 0.25rem;
+  transition: transform 0.5s;
+  z-index: 5;
+}
+.btn-secondary:hover::after {
+  transform: translate(-50%, -50%) scale(150);
+}
+.btn-secondary:hover span {
+  color: var(--bg-color);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes menuContentVisible {
   0% {
     top: -100%;
@@ -249,6 +364,7 @@ a {
     left: -15%;
   }
   100% {
+    opacity: 1;
     left: 0%;
   }
 }
@@ -313,14 +429,16 @@ a {
     height: 100%;
   }
 
+  .flex-row-xl {
+    flex-direction: row;
+  }
+
   .menu {
     width: 4rem;
     height: 100%;
     border-bottom: none;
   }
   .menu::before {
-    content: "";
-    position: absolute;
     top: 0;
     height: 100%;
     border-right: 1px solid var(--color-hover-alpha);
@@ -328,7 +446,7 @@ a {
     animation: borderHeader-xl 1s linear;
   }
   .menu > .container {
-    height: 55%;
+    height: 50vh;
   }
   .menu__hamburguer {
     padding: 0;
@@ -341,6 +459,18 @@ a {
   .menu__content.visible {
     left: 0%;
     animation: menuContentVisible-xl 0.5s linear;
+  }
+  .menu__content nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu__content nav a {
+    font-size: 2rem;
+  }
+  .menu .social-list a {
+    padding: 0 1rem;
+    font-size: 1.25rem;
   }
 }
 

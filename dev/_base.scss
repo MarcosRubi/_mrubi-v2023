@@ -98,6 +98,12 @@ body{
 a{
     text-decoration: none;
     color: var(--color-link);
+    cursor: pointer;
+}
+li{
+    list-style: none;
+    display: block;
+    width: 100%;
 }
 .container {
     max-width: 1440px;
@@ -119,4 +125,7 @@ a{
 
 .p-fixed {
     position: fixed;
+}
+.flex-row-xl{
+    flex-direction: column;
 }
