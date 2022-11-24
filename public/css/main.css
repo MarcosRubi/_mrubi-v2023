@@ -92,6 +92,15 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--bg-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
 .container {
   max-width: 1440px;
   margin: 0px auto;
@@ -117,28 +126,187 @@
 .menu {
   padding: 1rem 0;
   width: 100%;
+}
+.menu::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   border-bottom: 1px solid var(--color-hover-alpha);
+  pointer-events: none;
+  animation: borderHeader 1s linear;
 }
 .menu .logo {
-  max-width: 32px;
+  transition: transform 300ms;
+}
+.menu .logo:hover {
+  transform: scale(1.1);
 }
 .menu .logo img {
-  width: 100%;
+  max-width: 32px;
 }
-.menu__hamburguer {
+.menu__hamburguer, .menu__close {
+  position: relative;
   width: 32px;
   height: 32px;
   padding: 0.2rem;
   cursor: pointer;
+  overflow: hidden;
 }
-.menu__hamburguer span {
+.menu__hamburguer::after, .menu__close::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  background-color: var(--bg-color);
+  clip-path: polygon(60% 0, 100% 0%, 40% 100%, 0% 100%);
+  transform: translate(-100%, -30%);
+}
+.menu__hamburguer span, .menu__close span {
   display: block;
   width: 100%;
   height: 2px;
   background-color: var(--text-color);
   margin-top: 0.3rem;
+  transition: all 200ms;
+}
+.menu__hamburguer:hover span:first-child {
+  animation: menuHamburguerLine 0.75s ease-in-out;
+  animation-delay: 0.1s;
+}
+.menu__hamburguer:hover span:nth-child(2) {
+  margin: 0.4rem 0;
+  animation: menuHamburguerLine 0.75s ease-in-out;
+  animation-delay: 0.2s;
+}
+.menu__hamburguer:hover span:last-child {
+  animation: menuHamburguerLine 0.75s ease-in-out;
+  animation-delay: 0.3s;
+}
+.menu__close {
+  opacity: 0;
+  transition: opacity 1.25s;
+}
+.menu__close span {
+  margin-top: 0;
+}
+.menu__close span:first-child {
+  rotate: 45deg;
+  transform: translate(8px, 9px);
+}
+.menu__close span:last-child {
+  rotate: -45deg;
+  transform: translate(-7px, 7px);
+}
+.menu__close:hover span:first-child {
+  animation: menuCloseLine1 0.75s ease-in-out;
+}
+.menu__close:hover span:last-child {
+  animation: menuCloseLine2 0.75s ease-in-out;
+  animation-delay: 0.1s;
+}
+.menu__content {
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0%;
+  background-color: var(--bg-footer);
+  transition: top 0.5s;
+}
+.menu__content .logo {
+  opacity: 0;
+  transition: opacity 2.5s;
+}
+.menu__content.visible {
+  top: 0%;
+  animation: menuContentVisible 0.5s linear;
+}
+.menu__content.visible .menu__close, .menu__content.visible .logo {
+  opacity: 1;
 }
 
+@keyframes menuContentVisible {
+  0% {
+    top: -100%;
+  }
+  50% {
+    top: -15%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+@keyframes menuContentVisible-xl {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: -15%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes borderHeader {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes borderHeader-xl {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes menuCloseLine1 {
+  0%, 60% {
+    transform: translate(5px, 0px);
+    width: 10%;
+  }
+  50%, 100% {
+    width: 100%;
+    transform: translate(8px, 9px);
+  }
+  51% {
+    opacity: 0;
+  }
+}
+@keyframes menuCloseLine2 {
+  0%, 60% {
+    width: 10%;
+    transform: translate(10px, 15px);
+  }
+  50%, 100% {
+    width: 100%;
+    transform: translate(-7px, 7px);
+  }
+  51% {
+    opacity: 0;
+  }
+}
+@keyframes menuHamburguerLine {
+  0% {
+    width: 100%;
+    margin-left: 0%;
+  }
+  50% {
+    width: 10%;
+    margin-left: 90%;
+  }
+  51% {
+    opacity: 0;
+  }
+}
 @media (min-width: 1200px) {
   .flex-column-xl {
     flex-direction: column;
@@ -148,14 +316,31 @@
   .menu {
     width: 4rem;
     height: 100%;
-    border-right: 1px solid var(--color-hover-alpha);
     border-bottom: none;
   }
-  .menu .container {
+  .menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-right: 1px solid var(--color-hover-alpha);
+    border-bottom: none;
+    animation: borderHeader-xl 1s linear;
+  }
+  .menu > .container {
     height: 55%;
   }
   .menu__hamburguer {
     padding: 0;
+  }
+  .menu__content {
+    left: -100%;
+    top: 0%;
+    transition: left 0.5s;
+  }
+  .menu__content.visible {
+    left: 0%;
+    animation: menuContentVisible-xl 0.5s linear;
   }
 }
 

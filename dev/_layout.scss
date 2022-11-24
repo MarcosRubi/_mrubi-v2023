@@ -1,39 +1,277 @@
 // ESTILOS HEADER
-.menu{
+.menu {
     padding: 1rem 0;
     width: 100%;
-    border-bottom: 1px solid var(--color-hover-alpha);
-    .logo{
-        max-width: 32px;
-        img{width: 100%;}
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--color-hover-alpha);
+        pointer-events: none;
+        animation: borderHeader 1s linear;
     }
-    &__hamburguer{
+
+    .logo {
+        transition: transform 300ms;
+
+        &:hover {
+            transform: scale(1.10);
+        }
+
+        img {
+            max-width: 32px;
+        }
+    }
+
+    &__hamburguer,
+    &__close {
+        position: relative;
         width: 32px;
         height: 32px;
         padding: 0.2rem;
         cursor: pointer;
-        span{
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 32px;
+            pointer-events: none;
+            background-color: var(--bg-color);
+            clip-path: polygon(60% 0, 100% 0%, 40% 100%, 0% 100%);
+            transform: translate(-100%, -30%);
+        }
+
+        span {
             display: block;
             width: 100%;
             height: 2px;
             background-color: var(--text-color);
-            margin-top: 0.3rem; 
+            margin-top: 0.3rem;
+            transition: all 200ms;
+        }
+    }
+
+    &__hamburguer:hover {
+
+        span:first-child {
+            animation: menuHamburguerLine .75s ease-in-out;
+            animation-delay: .1s;
+        }
+
+        span:nth-child(2) {
+            margin: .4rem 0;
+            animation: menuHamburguerLine .75s ease-in-out;
+            animation-delay: .2s;
+        }
+
+        span:last-child {
+            animation: menuHamburguerLine .75s ease-in-out;
+            animation-delay: .3s;
+        }
+    }
+
+    &__close {
+        opacity: 0;
+        transition: opacity 1.25s;
+
+        span {
+            margin-top: 0;
+        }
+
+        span:first-child {
+            rotate: 45deg;
+            transform: translate(8px, 9px);
+        }
+
+        span:last-child {
+            rotate: -45deg;
+            transform: translate(-7px, 7px);
+        }
+    }
+
+    &__close:hover {
+        span:first-child {
+            animation: menuCloseLine1 .75s ease-in-out;
+        }
+
+        span:last-child {
+            animation: menuCloseLine2 .75s ease-in-out;
+            animation-delay: .1s;
+
+        }
+    }
+
+    &__content {
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: -100%;
+        left: 0%;
+        background-color: var(--bg-footer);
+        transition: top .5s;
+        & .logo{
+            opacity: 0;
+            transition: opacity 2.5s;
+        }
+
+        &.visible {
+            top: 0%;
+            animation: menuContentVisible .5s linear;
+            & .menu__close,
+            & .logo{
+                opacity: 1;
+            }
         }
     }
 }
 
+@keyframes menuContentVisible {
+    0% {
+        top: -100%;
+    }
+
+    50% {
+        top: -15%;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+@keyframes menuContentVisible-xl {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: -15%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+@keyframes borderHeader {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes borderHeader-xl {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes menuCloseLine1 {
+
+    0%,
+    60% {
+        transform: translate(5px, 0px);
+        width: 10%;
+    }
+
+    50%,
+    100% {
+        width: 100%;
+        transform: translate(8px, 9px);
+    }
+
+    51% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes menuCloseLine2 {
+
+    0%,
+    60% {
+        width: 10%;
+        transform: translate(10px, 15px);
+    }
+
+    50%,
+    100% {
+        width: 100%;
+        transform: translate(-7px, 7px);
+    }
+
+    51% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes menuHamburguerLine {
+    0% {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    50% {
+        width: 10%;
+        margin-left: 90%;
+    }
+
+    51% {
+        opacity: 0;
+    }
+}
+
 // ESTILOS MENU PANTALLAS > 1200px
-@mixin menu-xl{
-    .menu{
+@mixin menu-xl {
+    .menu {
         width: 4rem;
         height: 100%;
-        border-right: 1px solid var(--color-hover-alpha);
         border-bottom: none;
-        .container{
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            border-right: 1px solid var(--color-hover-alpha);
+            border-bottom: none;
+            animation: borderHeader-xl 1s linear;
+        }
+
+        &>.container {
             height: 55%;
         }
-        &__hamburguer{
+
+        &__hamburguer {
             padding: 0;
         }
+
+        &__content {
+            left: -100%;
+            top: 0%;
+            transition: left .5s;
+            
+            &.visible {
+                left: 0%;
+                animation: menuContentVisible-xl .5s linear;
+            }
+        }
+
+
     }
 }
