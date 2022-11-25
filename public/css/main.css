@@ -173,6 +173,28 @@ li {
     transform: translateX(0px);
   }
 }
+@keyframes toRight {
+  0% {
+    transform: translateX(10px);
+  }
+  30%, 70% {
+    transform: translateX(10px);
+  }
+  20%, 60%, 100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes toBottom {
+  0% {
+    transform: translateY(10px);
+  }
+  30%, 70% {
+    transform: translateY(10px);
+  }
+  20%, 60%, 100% {
+    transform: translateY(0px);
+  }
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -573,6 +595,36 @@ li {
 .menu__toggle {
   animation: fadeIn 1.25s linear;
 }
+.menu__toggle span {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  font-weight: 700;
+  font-size: 0.9rem;
+  width: 210px;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  position: absolute;
+  left: -50%;
+  top: 150%;
+  cursor: pointer;
+  animation: toBottom 2s linear;
+}
+.menu__toggle span::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 35%;
+  top: -90%;
+  border-right: 1rem solid transparent;
+  border-top: 1rem solid transparent;
+  border-left: 1rem solid transparent;
+  border-bottom: 1rem solid var(--text-color);
+}
+.menu__toggle span.hide {
+  visibility: hidden;
+}
 .menu .btn-toggle {
   padding: 10px;
   margin-left: 30px;
@@ -673,14 +725,14 @@ li {
   }
   .menu__toggle {
     width: 35px;
-    height: 5rem;
+    height: 4.5rem;
   }
   .menu__toggle input:before {
-    width: 85%;
+    width: 80%;
     height: 90%;
   }
   .menu__toggle input:checked:after {
-    transform: translate(5px, 158%);
+    transform: translate(5px, 135%);
   }
   .menu__toggle input:after {
     top: 12%;
@@ -691,11 +743,27 @@ li {
   }
   .menu__toggle i.fa-moon {
     right: 8px;
-    top: 3.2rem;
+    top: 2.75rem;
   }
   .menu__toggle i.fa-sun {
     left: 7px;
     top: 8px;
+  }
+  .menu__toggle span {
+    left: 150%;
+    top: 25%;
+    animation: toRight 2s linear;
+  }
+  .menu__toggle span::after {
+    left: -5%;
+    top: 0%;
+    border-right: 2rem solid var(--text-color);
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-left: 0;
+  }
+  .menu__toggle span.hide {
+    visibility: hidden;
   }
   .menu .btn-toggle {
     display: block;

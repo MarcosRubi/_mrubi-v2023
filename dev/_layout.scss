@@ -240,6 +240,39 @@
 
     &__toggle {
         animation: fadeIn 1.25s linear;
+
+        span {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            font-weight: 700;
+            font-size: 0.9rem;
+            width: 210px;
+            text-align: center;
+            padding: .5rem 1rem;
+            border-radius: .25rem;
+            position: absolute;
+            left: -50%;
+            top: 150%;
+            cursor: pointer;
+            animation: toBottom 2s linear;
+
+            &::after {
+                content: '';
+                width: 0;
+                height: 0;
+                position: absolute;
+                left: 35%;
+                top: -90%;
+                border-right: 1rem solid transparent;
+                border-top: 1rem solid transparent;
+                border-left: 1rem solid transparent;
+                border-bottom: 1rem solid var(--text-color);
+            }
+
+            &.hide {
+                visibility: hidden;
+            }
+        }
     }
 
     .btn-toggle {
@@ -354,16 +387,16 @@
 
         &__toggle {
             width: 35px;
-            height: 5rem;
+            height: 4.5rem;
 
             & input {
                 &:before {
-                    width: 85%;
+                    width: 80%;
                     height: 90%;
                 }
 
                 &:checked:after {
-                    transform: translate(5px, 158%);
+                    transform: translate(5px, 135%);
                 }
 
                 &:after {
@@ -377,12 +410,31 @@
 
                 &.fa-moon {
                     right: 8px;
-                    top: 3.2rem;
+                    top: 2.75rem;
                 }
 
                 &.fa-sun {
                     left: 7px;
                     top: 8px;
+                }
+            }
+
+            span {
+                left: 150%;
+                top: 25%;
+                animation: toRight 2s linear;
+
+                &::after {
+                    left: -5%;
+                    top: 0%;
+                    border-right: 2rem solid var(--text-color);
+                    border-top: 1rem solid transparent;
+                    border-bottom: 1rem solid transparent;
+                    border-left: 0;
+                }
+
+                &.hide {
+                    visibility: hidden;
                 }
             }
         }
