@@ -134,206 +134,17 @@ li {
   flex-direction: column;
 }
 
-.menu {
-  padding: 1rem 0;
-  width: 100%;
+@keyframes toLeft {
+  0% {
+    transform: translateX(-100px);
+  }
+  30% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
-.menu::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  border-bottom: 1px solid var(--color-hover-alpha);
-  pointer-events: none;
-  animation: borderHeader 1s linear;
-}
-.menu .logo {
-  transition: transform 300ms;
-  color: var(--text-color);
-  animation: fadeIn 0.5s linear;
-}
-.menu .logo span {
-  padding-left: 0.5rem;
-}
-.menu .logo:hover {
-  transform: scale(1.1);
-}
-.menu .logo img {
-  max-width: 32px;
-}
-.menu__hamburguer {
-  animation: fadeIn 1s linear;
-}
-.menu__hamburguer, .menu__close {
-  position: relative;
-  width: 32px;
-  height: 32px;
-  padding: 0.2rem;
-  cursor: pointer;
-  overflow: hidden;
-}
-.menu__hamburguer::after, .menu__close::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 32px;
-  height: 32px;
-  pointer-events: none;
-  background-color: var(--bg-color);
-  clip-path: polygon(60% 0, 100% 0%, 40% 100%, 0% 100%);
-  transform: translate(-100%, -30%);
-}
-.menu__hamburguer span, .menu__close span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: var(--text-color);
-  margin-top: 0.3rem;
-  transition: all 200ms;
-}
-.menu__hamburguer:hover span:first-child {
-  animation: menuHamburguerLine 0.75s ease-in-out;
-  animation-delay: 0.1s;
-}
-.menu__hamburguer:hover span:nth-child(2) {
-  margin: 0.4rem 0;
-  animation: menuHamburguerLine 0.75s ease-in-out;
-  animation-delay: 0.2s;
-}
-.menu__hamburguer:hover span:last-child {
-  animation: menuHamburguerLine 0.75s ease-in-out;
-  animation-delay: 0.3s;
-}
-.menu__close {
-  opacity: 0;
-}
-.menu__close span {
-  margin-top: 0;
-}
-.menu__close span:first-child {
-  rotate: 45deg;
-  transform: translate(8px, 9px);
-}
-.menu__close span:last-child {
-  rotate: -45deg;
-  transform: translate(-7px, 7px);
-}
-.menu__close:hover span:first-child {
-  animation: menuCloseLine1 0.75s ease-in-out;
-}
-.menu__close:hover span:last-child {
-  animation: menuCloseLine2 0.75s ease-in-out;
-  animation-delay: 0.1s;
-}
-.menu__content {
-  padding: 1rem 0;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: -100%;
-  left: 0%;
-  background-color: var(--bg-footer);
-  transition: top 0.5s;
-}
-.menu__content.visible {
-  top: 0%;
-  animation: menuContentVisible 0.5s linear;
-}
-.menu__content.visible .menu__close {
-  animation: fadeIn 1.5s linear;
-  opacity: 1;
-}
-.menu__content .logo {
-  pointer-events: none;
-}
-.menu__content nav {
-  text-align: center;
-  margin-top: 1rem;
-}
-.menu__content nav a {
-  font-size: 1.5rem;
-  display: block;
-  padding: 1.5rem;
-}
-.menu__header, .menu__footer {
-  height: 2rem;
-  padding: 1rem 0;
-  z-index: 100;
-}
-.menu nav {
-  height: calc(100% - 6rem);
-  z-index: 5;
-}
-.menu nav a {
-  position: relative;
-  transition: color 300ms;
-}
-.menu nav a:hover {
-  color: var(--color-hover);
-}
-.menu nav a:hover::after {
-  width: 90%;
-}
-.menu nav a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  height: 2px;
-  width: 0px;
-  max-width: 8rem;
-  transition: width 1s;
-  background-color: var(--color-hover);
-  transform: translate(-50%, -1rem);
-}
-.menu .social-list a {
-  transition: all 300ms;
-  padding: 0.5rem 0.75rem;
-  display: block;
-}
-.menu .social-list a:hover {
-  color: var(--color-hover);
-  transform: scale(1.25);
-}
-
-.btn {
-  padding: 1rem 1.5rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  position: relative;
-  overflow: hidden;
-}
-.btn span {
-  position: relative;
-  z-index: 10;
-  color: var(--text-color);
-  transition: color 0.75s;
-}
-
-.btn-secondary {
-  border: 1px solid var(--color-hover);
-}
-.btn-secondary::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1px;
-  height: 1px;
-  background-color: var(--color-hover);
-  border-radius: 0.25rem;
-  transition: transform 0.5s;
-  z-index: 5;
-}
-.btn-secondary:hover::after {
-  transform: translate(-50%, -50%) scale(150);
-}
-.btn-secondary:hover span {
-  color: var(--bg-color);
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -423,6 +234,256 @@ li {
     opacity: 0;
   }
 }
+.btn {
+  padding: 1rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  position: relative;
+  overflow: hidden;
+}
+.btn span {
+  position: relative;
+  z-index: 10;
+  color: var(--text-color);
+  transition: color 0.75s;
+}
+
+.btn-secondary {
+  border: 1px solid var(--color-hover);
+}
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 1px;
+  background-color: var(--color-hover);
+  border-radius: 0.25rem;
+  transition: transform 0.5s;
+  z-index: 5;
+}
+.btn-secondary:hover::before {
+  transform: translate(-50%, -50%) scale(150);
+}
+.btn-secondary:hover span {
+  color: var(--bg-color);
+}
+
+.menu {
+  padding: 1rem 0;
+  width: 100%;
+}
+.menu::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--color-hover-alpha);
+  pointer-events: none;
+  animation: borderHeader 1s linear;
+}
+.menu .logo {
+  transition: transform 300ms;
+  color: var(--text-color);
+  animation: fadeIn 0.5s linear;
+}
+.menu .logo span {
+  padding-left: 0.5rem;
+}
+.menu .logo:hover {
+  transform: scale(1.1);
+}
+.menu .logo img {
+  max-width: 32px;
+}
+.menu__hamburguer {
+  animation: fadeIn 1s linear;
+}
+.menu__hamburguer:hover span:first-child {
+  animation: menuHamburguerLine 0.75s ease-in-out;
+  animation-delay: 0.1s;
+}
+.menu__hamburguer:hover span:nth-child(2) {
+  margin: 0.4rem 0;
+  animation: menuHamburguerLine 0.75s ease-in-out;
+  animation-delay: 0.2s;
+}
+.menu__hamburguer:hover span:last-child {
+  animation: menuHamburguerLine 0.75s ease-in-out;
+  animation-delay: 0.3s;
+}
+.menu__hamburguer, .menu__close {
+  position: relative;
+  width: 40px;
+  height: 35px;
+  padding: 0.2rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+.menu__hamburguer::after, .menu__close::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  background-color: var(--bg-color);
+  clip-path: polygon(60% 0, 100% 0%, 40% 100%, 0% 100%);
+  transform: translate(-100%, -30%);
+}
+.menu__hamburguer span, .menu__close span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+  margin-top: 0.3rem;
+  transition: all 200ms;
+}
+.menu__close .btn {
+  margin-top: 9rem;
+}
+.menu__close span {
+  margin-top: 0;
+}
+.menu__close span:first-child {
+  rotate: 45deg;
+  transform: translate(8px, 9px);
+}
+.menu__close span:last-child {
+  rotate: -45deg;
+  transform: translate(-7px, 7px);
+}
+.menu__close:hover span:first-child {
+  animation: menuCloseLine1 0.75s ease-in-out;
+}
+.menu__close:hover span:last-child {
+  animation: menuCloseLine2 0.75s ease-in-out;
+  animation-delay: 0.1s;
+}
+.menu__content {
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0%;
+  background-color: var(--bg-footer);
+  transition: top 0.5s;
+}
+.menu__content .logo {
+  pointer-events: none;
+}
+.menu__content nav {
+  text-align: center;
+  margin-top: 1rem;
+}
+.menu__content nav a {
+  font-size: 1.5rem;
+  display: block;
+  padding: 1.5rem;
+}
+.menu__content .menu__close,
+.menu__content .logo span,
+.menu__content nav li,
+.menu__content .btn,
+.menu__content .social-list li {
+  opacity: 0;
+}
+.menu__content.visible {
+  top: 0%;
+  animation: menuContentVisible 0.5s linear;
+}
+.menu__content.visible .menu__close {
+  animation: fadeIn 1.5s linear;
+  opacity: 1;
+}
+.menu__content.visible .logo span {
+  animation: fadeIn 2.5s linear, toLeft 1s linear;
+  opacity: 1;
+}
+.menu__content.visible nav li:first-child {
+  animation: fadeIn 1.75s linear, toLeft 1s linear;
+  opacity: 1;
+}
+.menu__content.visible nav li:nth-child(2) {
+  animation: fadeIn 2s linear, toLeft 1s linear;
+  opacity: 1;
+}
+.menu__content.visible nav li:nth-child(3) {
+  animation: fadeIn 2.25s linear, toLeft 1s linear;
+  opacity: 1;
+}
+.menu__content.visible nav li:nth-child(4) {
+  animation: fadeIn 2.5s linear, toLeft 1s linear;
+  opacity: 1;
+}
+.menu__content.visible nav li:last-child {
+  animation: fadeIn 2.5s linear, toLeft 1s linear;
+  opacity: 1;
+}
+.menu__content.visible .btn {
+  animation: fadeIn 2.75s linear, toLeft 1s linear;
+  opacity: 1;
+}
+.menu__content.visible .social-list li:first-child {
+  animation: fadeIn 2.75s linear, toLeft 1s linear;
+  opacity: 1;
+}
+.menu__content.visible .social-list li:nth-child(2) {
+  animation: fadeIn 3s linear, toLeft 1s linear;
+  opacity: 1;
+}
+.menu__content.visible .social-list li:nth-child(3) {
+  animation: fadeIn 3.25s linear, toLeft 1s linear;
+  opacity: 1;
+}
+.menu__content.visible .social-list li:last-child {
+  animation: fadeIn 3.5s linear, toLeft 1s linear;
+  opacity: 1;
+}
+.menu__header, .menu__footer {
+  height: 2rem;
+  padding: 1rem 0;
+  z-index: 100;
+}
+.menu nav {
+  height: calc(100% - 6rem);
+}
+.menu nav a {
+  position: relative;
+  transition: color 300ms;
+}
+.menu nav a:hover {
+  color: var(--color-hover);
+}
+.menu nav a:hover::after {
+  width: 100%;
+}
+.menu nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 2px;
+  width: 0%;
+  max-width: 8rem;
+  transition: width 1s;
+  background-color: var(--color-hover);
+  transform: translate(-50%, -1rem);
+}
+.menu .social-list a {
+  transition: all 300ms;
+  padding: 0.5rem 0.75rem;
+  display: block;
+}
+.menu .social-list a:hover {
+  color: var(--color-hover);
+  transform: scale(1.25);
+}
+
 @media (min-width: 1200px) {
   .flex-column-xl {
     flex-direction: column;
@@ -467,6 +528,10 @@ li {
   }
   .menu__content nav a {
     font-size: 2rem;
+  }
+  .menu nav a::after {
+    max-width: 10rem;
+    transition: width 0.5s;
   }
   .menu .social-list a {
     padding: 0 1rem;

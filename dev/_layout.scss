@@ -3,7 +3,6 @@
     padding: 1rem 0;
     width: 100%;
 
-
     &::before {
         content: '';
         position: absolute;
@@ -34,13 +33,17 @@
 
     &__hamburguer {
         animation: fadeIn 1s linear;
+
+        &:hover {
+            @include menu-hamburguer-animation;
+        }
     }
 
     &__hamburguer,
     &__close {
         position: relative;
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 35px;
         padding: 0.2rem;
         cursor: pointer;
         overflow: hidden;
@@ -68,28 +71,10 @@
         }
     }
 
-    &__hamburguer:hover {
-
-        span:first-child {
-            animation: menuHamburguerLine .75s ease-in-out;
-            animation-delay: .1s;
-        }
-
-        span:nth-child(2) {
-            margin: .4rem 0;
-            animation: menuHamburguerLine .75s ease-in-out;
-            animation-delay: .2s;
-        }
-
-        span:last-child {
-            animation: menuHamburguerLine .75s ease-in-out;
-            animation-delay: .3s;
-        }
-    }
-
     &__close {
-        opacity: 0;
-
+        .btn{
+            margin-top: 9rem;
+        }
         span {
             margin-top: 0;
         }
@@ -105,15 +90,7 @@
         }
 
         &:hover {
-            span:first-child {
-                animation: menuCloseLine1 .75s ease-in-out;
-            }
-
-            span:last-child {
-                animation: menuCloseLine2 .75s ease-in-out;
-                animation-delay: .1s;
-
-            }
+            @include menu-close-animations;
         }
     }
 
@@ -127,69 +104,73 @@
         background-color: var(--bg-footer);
         transition: top .5s;
 
-        &.visible {
-            top: 0%;
-            animation: menuContentVisible .5s linear;
-
-            & .menu__close{
-                animation: fadeIn 1.5s linear;
-                opacity: 1;
-            }
-        }
-        .logo{
+        .logo {
             pointer-events: none;
         }
-        nav{
+
+        nav {
             text-align: center;
             margin-top: 1rem;
-            a{
+
+            a {
                 font-size: 1.5rem;
                 display: block;
                 padding: 1.5rem;
             }
         }
+
+        @include menu-content-animations;
     }
+
     &__header,
-    &__footer{
+    &__footer {
         height: 2rem;
         padding: 1rem 0;
         z-index: 100;
     }
-    nav{
+
+    nav {
         height: calc(100% - 6rem);
-        z-index: 5;
-        a{
+
+        a {
             position: relative;
             transition: color 300ms;
-            &:hover{
+
+            &:hover {
                 color: var(--color-hover);
             }
-            &:hover::after{
-                width: 90%;
+
+            &:hover::after {
+                width: 100%;
             }
         }
-        a::after{
+
+        a::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 50%;
             height: 2px;
-            width: 0px;
+            width: 0%;
             max-width: 8rem;
             transition: width 1s;
             background-color: var(--color-hover);
             transform: translate(-50%, -1rem);
         }
     }
-    .social-list a{
+
+    .social-list a {
         transition: all 300ms;
         padding: .5rem .75rem;
         display: block;
-        &:hover{
+
+        &:hover {
             color: var(--color-hover);
             transform: scale(1.25);
         }
     }
+    
+
 }
 
 
@@ -225,16 +206,24 @@
                 left: 0%;
                 animation: menuContentVisible-xl .5s linear;
             }
-            nav{
+
+            nav {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                a{
+
+                a {
                     font-size: 2rem;
                 }
             }
         }
-        .social-list a{
+
+        nav a::after {
+            max-width: 10rem;
+            transition: width .5s;
+        }
+
+        .social-list a {
             padding: 0 1rem;
             font-size: 1.25rem;
         }

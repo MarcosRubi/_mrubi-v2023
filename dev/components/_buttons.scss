@@ -15,7 +15,7 @@
 }
 .btn-secondary{
     border: 1px solid var(--color-hover);
-    &::after{
+    &::before{
         content: '';
         position: absolute;
         top: 50%;
@@ -28,7 +28,7 @@
         transition: transform .5s;
         z-index: 5;
     }
-    &:hover::after{
+    &:hover::before{
         transform: translate(-50%, -50%) scale(150);
     }
     &:hover span{
