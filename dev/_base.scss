@@ -93,7 +93,21 @@
     box-sizing: border-box;
 }
 body{
+    font-family: "Montserrat",sans-serif;
     background-color: var(--bg-color);
+    transition: background-color .5s;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+nav a{
+    font-family: var(--font-title);
+}
+h3{
+    font-size: .75rem;
+    margin-bottom: 0.5rem;
 }
 a{
     text-decoration: none;
@@ -122,9 +136,17 @@ li{
 .jc-between {
     justify-content: space-between;
 }
-
+.jc-center{
+    justify-content: center;
+}
 .p-fixed {
     position: fixed;
+}
+.p-relative{
+    position: relative;
+}
+.p-absolute{
+    position: absolute;
 }
 .flex-row-xl{
     flex-direction: column;

@@ -93,7 +93,23 @@
 }
 
 body {
+  font-family: "Montserrat", sans-serif;
   background-color: var(--bg-color);
+  transition: background-color 0.5s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+nav a {
+  font-family: var(--font-title);
+}
+
+h3 {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 a {
@@ -126,8 +142,20 @@ li {
   justify-content: space-between;
 }
 
+.jc-center {
+  justify-content: center;
+}
+
 .p-fixed {
   position: fixed;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
 }
 
 .flex-row-xl {
@@ -235,7 +263,7 @@ li {
   }
 }
 .btn {
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
   position: relative;
@@ -265,7 +293,7 @@ li {
   z-index: 5;
 }
 .btn-secondary:hover::before {
-  transform: translate(-50%, -50%) scale(150);
+  transform: translate(-50%, -50%) scale(200);
 }
 .btn-secondary:hover span {
   color: var(--bg-color);
@@ -300,6 +328,7 @@ li {
 }
 .menu__hamburguer {
   animation: fadeIn 1s linear;
+  order: 3;
 }
 .menu__hamburguer:hover span:first-child {
   animation: menuHamburguerLine 0.75s ease-in-out;
@@ -313,6 +342,63 @@ li {
 .menu__hamburguer:hover span:last-child {
   animation: menuHamburguerLine 0.75s ease-in-out;
   animation-delay: 0.3s;
+}
+.menu__toggle {
+  position: relative;
+  width: 5rem;
+  height: 35px;
+  background: var(--color-link);
+  border-radius: 50px;
+}
+.menu__toggle input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  appearance: none;
+}
+.menu__toggle input:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 85%;
+  background: var(--bg-color);
+  filter: invert(1);
+  border-radius: 50px;
+}
+.menu__toggle input:checked:after {
+  transform: translate(50px, -50%);
+  opacity: 1;
+}
+.menu__toggle input:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 25px;
+  height: 25px;
+  transform: translate(5px, -50%);
+  background: var(--color-link);
+  border-radius: 50px;
+  transition: all 400ms;
+  filter: contrast(60%);
+  z-index: 5;
+}
+.menu__toggle i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  color: var(--bg-color);
+  pointer-events: none;
+}
+.menu__toggle i.fa-moon {
+  right: 8px;
+}
+.menu__toggle i.fa-sun {
+  left: 8px;
 }
 .menu__hamburguer, .menu__close {
   position: relative;
@@ -372,6 +458,7 @@ li {
   left: 0%;
   background-color: var(--bg-footer);
   transition: top 0.5s;
+  z-index: 1000;
 }
 .menu__content .logo {
   pointer-events: none;
@@ -483,6 +570,49 @@ li {
   color: var(--color-hover);
   transform: scale(1.25);
 }
+.menu__toggle {
+  animation: fadeIn 1.25s linear;
+}
+.menu .btn-toggle {
+  padding: 10px;
+  margin-left: 30px;
+  cursor: pointer;
+  animation: fadeIn 1.5s linear;
+}
+.menu__colour-variations i {
+  font-size: 1.75rem;
+}
+.menu__preset-colors {
+  top: 40px;
+  width: 95%;
+  left: 0;
+  color: #fff;
+  background: #555;
+  padding: 10px;
+  opacity: 0;
+  border-radius: 5px;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  visibility: hidden;
+}
+.menu__preset-colors.show {
+  opacity: 1;
+  visibility: visible;
+}
+.menu__preset-colors li {
+  display: block;
+  float: left;
+  margin-bottom: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+.menu__preset-colors span {
+  width: 50%;
+  height: 20px;
+  float: left;
+  zoom: 1;
+  border-radius: 2px 0px 0px 2px;
+}
 
 @media (min-width: 1200px) {
   .flex-column-xl {
@@ -499,6 +629,9 @@ li {
     height: 100%;
     border-bottom: none;
   }
+  .menu .btn-secondary {
+    padding: 1rem 1.5rem;
+  }
   .menu::before {
     top: 0;
     height: 100%;
@@ -507,10 +640,11 @@ li {
     animation: borderHeader-xl 1s linear;
   }
   .menu > .container {
-    height: 50vh;
+    height: 100%;
   }
   .menu__hamburguer {
     padding: 0;
+    order: 0;
   }
   .menu__content {
     left: -100%;
@@ -536,6 +670,56 @@ li {
   .menu .social-list a {
     padding: 0 1rem;
     font-size: 1.25rem;
+  }
+  .menu__toggle {
+    width: 35px;
+    height: 5rem;
+  }
+  .menu__toggle input:before {
+    width: 85%;
+    height: 90%;
+  }
+  .menu__toggle input:checked:after {
+    transform: translate(5px, 158%);
+  }
+  .menu__toggle input:after {
+    top: 12%;
+    transform: translate(5px, -12%);
+  }
+  .menu__toggle i {
+    transform: translateX(0%);
+  }
+  .menu__toggle i.fa-moon {
+    right: 8px;
+    top: 3.2rem;
+  }
+  .menu__toggle i.fa-sun {
+    left: 7px;
+    top: 8px;
+  }
+  .menu .btn-toggle {
+    display: block;
+    margin-top: 0.5rem;
+    margin-left: 0;
+  }
+  .menu .settings {
+    flex-basis: 10%;
+  }
+  .menu .menu__preset-colors {
+    top: 0px;
+    left: 100%;
+    width: 140px;
+    transition: all 500ms;
+    visibility: hidden;
+  }
+  .menu .menu__preset-colors.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .menu__preset-colors.show {
+    top: 0;
+    left: 120%;
+    width: 150px;
   }
 }
 

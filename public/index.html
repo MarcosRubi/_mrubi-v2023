@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="default-dark">
+<html lang="es" data-theme="">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +17,11 @@
     <meta name="keywords" content="Portafolio, Marcos Rubi, Técnico, ingeniero, sistemas, desarrollador web, programador, frontend, front-end, developer, web developer, maquetador web">
     <meta name="author" content="Marcos Rubí">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <title>Portafolio | Marcos Rubí</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>Portafolio | Marcos Rubí</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link async="" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&amp;family=Telex&amp;display=swap" rel="stylesheet" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/87b8bff04b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body> 
     <header class="menu p-fixed">
@@ -47,6 +49,30 @@
                 <li><a><i class="fa fa-twitter"></i></a></li>
                 <li><a><i class="fa fa-instagram"></i></a></li>
               </ul>
+            </div>
+          </div>
+          <div class="d-flex align-center flex-column-xl p-relative settings">
+            <div class="menu__toggle">
+              <input type="checkbox" name="toggle-theme" id="toggle-theme"><i class="fa fa-moon" aria-hidden="true"></i><i class="fa fa-sun" aria-hidden="true"></i>
+            </div>
+            <div class="menu__colour-variations"><a class="btn-toggle" id="btn-colors"><i class="fas fa-cog" aria-hidden="true"></i></a>
+              <div class="menu__preset-colors p-absolute">
+                <h3>Seleccione el tema</h3>
+                <ul class="menu__list-theme">
+                  <li>
+                    <div onclick="javascript:changeTheme('default');"><span class="theme-color" style="background:#3959a2;"></span><span class="theme-color" style="background:#a8dbd2;"></span></div>
+                  </li>
+                  <li> 
+                    <div onclick="javascript:changeTheme('purple');"><span class="theme-color" style="background:#9A9CEA;"></span><span class="theme-color" style="background:#A2DCEE;"></span></div>
+                  </li>
+                  <li> 
+                    <div onclick="javascript:changeTheme('gray');"><span class="theme-color" style="background:#78A6C8;"></span><span class="theme-color" style="background:#E65C4F;"></span></div>
+                  </li>
+                  <li> 
+                    <div onclick="javascript:changeTheme('green');"><span class="theme-color" style="background:#53D2B2;"></span><span class="theme-color" style="background:#FFE3B3;"></span></div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 doctype html
-html(lang="es" data-theme="default-dark")
+html(lang="es" data-theme="")
     head
         meta(charset="UTF-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -18,14 +18,17 @@ html(lang="es" data-theme="default-dark")
         meta(name="author" content="Marcos Rubí")
         link(rel="shortcut icon" href="images/favicon.ico" type="image/x-icon")
         title Portafolio | Marcos Rubí
-        link(rel="stylesheet", href="css/main.css")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link async="" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&amp;family=Telex&amp;display=swap" rel="stylesheet" crossorigin="anonymous">
         script(src="https://kit.fontawesome.com/87b8bff04b.js" crossorigin="anonymous")
+        link(rel="stylesheet" href="css/main.css")
     body 
         header(class="menu p-fixed")
             div(class="container")
                 div(class="d-flex align-center jc-between flex-column-xl")
                     a(href="#" class="logo")
-                        img(src="images/logo.webp", alt="Logo de Marcos Rubí" class="d-flex")
+                        img(src="images/logo.webp" alt="Logo de Marcos Rubí" class="d-flex")
                     div(class="menu__hamburguer")
                         span(class="line")
                         span(class="line")
@@ -33,7 +36,7 @@ html(lang="es" data-theme="default-dark")
                     div(class="menu__content")
                         div(class="menu__header d-flex align-center jc-between container")
                             div(class="logo d-flex align-center")
-                                img(src="images/logo.webp", alt="Logo de Marcos Rubí" class="d-flex")
+                                img(src="images/logo.webp" alt="Logo de Marcos Rubí" class="d-flex")
                                 span Marcos Rubí
                             div(class="menu__close btn")
                                 span(class="line")
@@ -61,4 +64,30 @@ html(lang="es" data-theme="default-dark")
                                     a: i(class="fa fa-twitter")
                                 li
                                     a: i(class="fa fa-instagram")
+                    div(class="d-flex align-center flex-column-xl p-relative settings")
+                        div(class="menu__toggle")
+                            input(type="checkbox" name="toggle-theme" id="toggle-theme")
+                            i(class="fa fa-moon" aria-hidden="true")
+                            i(class="fa fa-sun" aria-hidden="true")
+                        div(class="menu__colour-variations")
+                            a(class="btn-toggle" id="btn-colors"): i(class="fas fa-cog" aria-hidden="true")
+                            div(class="menu__preset-colors p-absolute")
+                                h3 Seleccione el tema
+                                ul(class="menu__list-theme")
+                                    li
+                                        div(onclick="javascript:changeTheme('default');")
+                                            span(class="theme-color" style="background:#3959a2;")
+                                            span(class="theme-color" style="background:#a8dbd2;")
+                                    li 
+                                        div(onclick="javascript:changeTheme('purple');")
+                                            span(class="theme-color" style="background:#9A9CEA;")
+                                            span(class="theme-color" style="background:#A2DCEE;")
+                                    li 
+                                        div(onclick="javascript:changeTheme('gray');")
+                                            span(class="theme-color" style="background:#78A6C8;")
+                                            span(class="theme-color" style="background:#E65C4F;")
+                                    li 
+                                        div(onclick="javascript:changeTheme('green');")
+                                            span(class="theme-color" style="background:#53D2B2;")
+                                            span(class="theme-color" style="background:#FFE3B3;")
         script(src="js/scripts.js") 

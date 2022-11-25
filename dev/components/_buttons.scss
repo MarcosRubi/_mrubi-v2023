@@ -1,21 +1,24 @@
 // Estilos de los botones
 
-.btn{
-    padding: 1rem 1.5rem;
+.btn {
+    padding: 0.75rem 1rem;
     border: 1px solid transparent;
     border-radius: .25rem;
     position: relative;
     overflow: hidden;
-    span{
+
+    span {
         position: relative;
         z-index: 10;
         color: var(--text-color);
         transition: color .75s;
     }
 }
-.btn-secondary{
+
+.btn-secondary {
     border: 1px solid var(--color-hover);
-    &::before{
+
+    &::before {
         content: '';
         position: absolute;
         top: 50%;
@@ -28,10 +31,13 @@
         transition: transform .5s;
         z-index: 5;
     }
-    &:hover::before{
-        transform: translate(-50%, -50%) scale(150);
+
+    &:hover::before {
+        transform: translate(-50%, -50%) scale(200);
     }
-    &:hover span{
+
+    &:hover span {
         color: var(--bg-color);
     }
 }
+
