@@ -1,7 +1,6 @@
 // ESTILOS HEADER
 .menu {
     padding: 1rem 0;
-    width: 100%;
 
     &::before {
         content: '';
@@ -15,7 +14,6 @@
 
     .logo {
         transition: transform 300ms;
-        color: var(--text-color);
         animation: fadeIn .5s linear;
 
         span {
@@ -41,15 +39,12 @@
     }
 
     &__toggle {
-        position: relative;
         width: 5rem;
         height: 35px;
         background: var(--color-link);
         border-radius: 50px;
 
         & input {
-            position: absolute;
-            width: 100%;
             height: 100%;
             cursor: pointer;
             appearance: none;
@@ -88,7 +83,6 @@
         }
 
         & i {
-            position: absolute;
             top: 50%;
             transform: translateY(-50%);
             font-size: 1.25rem;
@@ -107,7 +101,6 @@
 
     &__hamburguer,
     &__close {
-        position: relative;
         width: 40px;
         height: 35px;
         padding: 0.2rem;
@@ -129,7 +122,6 @@
 
         span {
             display: block;
-            width: 100%;
             height: 2px;
             background-color: var(--text-color);
             margin-top: 0.3rem;
@@ -164,27 +156,16 @@
     &__content {
         padding: 1rem 0;
         position: fixed;
-        width: 100%;
         height: 100%;
         top: -100%;
         left: 0%;
+        pointer-events: none;
         background-color: var(--bg-footer);
-        transition: top .5s;
+        transition: all .5s;
         z-index: 1000;
 
         .logo {
             pointer-events: none;
-        }
-
-        nav {
-            text-align: center;
-            margin-top: 1rem;
-
-            a {
-                font-size: 1.5rem;
-                display: block;
-                padding: 1.5rem;
-            }
         }
 
         @include menu-content-animations;
@@ -199,10 +180,15 @@
 
     nav {
         height: calc(100% - 6rem);
+        text-align: center;
+        margin-top: 1rem;
+
 
         a {
-            position: relative;
             transition: color 300ms;
+            font-size: 1.5rem;
+            display: block;
+            padding: 1.5rem;
 
             &:hover {
                 color: var(--color-hover);
@@ -211,19 +197,19 @@
             &:hover::after {
                 width: 100%;
             }
-        }
 
-        a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            height: 2px;
-            width: 0%;
-            max-width: 8rem;
-            transition: width 1s;
-            background-color: var(--color-hover);
-            transform: translate(-50%, -1rem);
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                height: 2px;
+                width: 0%;
+                max-width: 8rem;
+                transition: width 1s;
+                background-color: var(--color-hover);
+                transform: translate(-50%, -1rem);
+            }
         }
     }
 
@@ -250,11 +236,10 @@
             text-align: center;
             padding: .5rem 1rem;
             border-radius: .25rem;
-            position: absolute;
             left: -50%;
             top: 150%;
             cursor: pointer;
-            animation: toBottom 2s linear;
+            animation: toBottom 2s linear, fadeIn 1s reverse 2s;
 
             &::after {
                 content: '';
@@ -287,7 +272,7 @@
     }
 
     &__preset-colors {
-        top: 40px;
+        top: 100%;
         width: 95%;
         left: 0;
         color: #fff;
@@ -302,25 +287,24 @@
         &.show {
             opacity: 1;
             visibility: visible;
+            top: 150%;
+        }
+
+        & li {
+            display: block;
+            float: left;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        & span {
+            width: 50%;
+            height: 20px;
+            float: left;
+            zoom: 1;
+            border-radius: 2px 0px 0px 2px;
         }
     }
-
-    &__preset-colors li {
-        display: block;
-        float: left;
-        margin-bottom: 5px;
-        width: 100%;
-        cursor: pointer;
-    }
-
-    &__preset-colors span {
-        width: 50%;
-        height: 20px;
-        float: left;
-        zoom: 1;
-        border-radius: 2px 0px 0px 2px;
-    }
-
 
 }
 
@@ -422,7 +406,7 @@
             span {
                 left: 150%;
                 top: 25%;
-                animation: toRight 2s linear;
+                animation: toRight 2s linear, fadeIn 1s reverse 2s;
 
                 &::after {
                     left: -5%;
@@ -459,13 +443,11 @@
             &.show {
                 opacity: 1;
                 visibility: visible;
+                top: 0;
+                left: 120%;
+                width: 150px;
             }
         }
 
-        &__preset-colors.show {
-            top: 0;
-            left: 120%;
-            width: 150px;
-        }
     }
 }

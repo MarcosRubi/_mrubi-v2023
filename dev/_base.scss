@@ -96,6 +96,7 @@ body{
     font-family: "Montserrat",sans-serif;
     background-color: var(--bg-color);
     transition: background-color .5s;
+    color: vaR(--text-color);
 }
 h1,
 h2,
@@ -105,6 +106,7 @@ h5,
 nav a{
     font-family: var(--font-title);
 }
+
 h3{
     font-size: .75rem;
     margin-bottom: 0.5rem;
@@ -150,4 +152,7 @@ li{
 }
 .flex-row-xl{
     flex-direction: column;
+}
+.full-width{
+    width: 100%;
 }

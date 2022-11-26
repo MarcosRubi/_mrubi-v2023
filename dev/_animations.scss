@@ -11,6 +11,7 @@
     &.visible {
         top: 0%;
         animation: menuContentVisible .5s linear;
+        pointer-events: auto;
 
         & .menu__close {
             animation: fadeIn 1.5s linear;

@@ -24,35 +24,35 @@ html(lang="es" data-theme="")
         script(src="https://kit.fontawesome.com/87b8bff04b.js" crossorigin="anonymous")
         link(rel="stylesheet" href="css/main.css")
     body 
-        header(class="menu p-fixed")
+        header(class="menu p-fixed full-width")
             div(class="container")
                 div(class="d-flex align-center jc-between flex-column-xl")
                     a(href="#" class="logo")
                         img(src="images/logo.webp" alt="Logo de Marcos Rubí" class="d-flex")
-                    div(class="menu__hamburguer")
-                        span(class="line")
-                        span(class="line")
-                        span(class="line")
-                    div(class="menu__content")
+                    div(class="menu__hamburguer p-relative")
+                        span(class="line full-width")
+                        span(class="line full-width")
+                        span(class="line full-width")
+                    div(class="menu__content full-width")
                         div(class="menu__header d-flex align-center jc-between container")
                             div(class="logo d-flex align-center")
                                 img(src="images/logo.webp" alt="Logo de Marcos Rubí" class="d-flex")
                                 span Marcos Rubí
-                            div(class="menu__close btn")
-                                span(class="line")
-                                span(class="line")
+                            div(class="menu__close btn p-relative")
+                                span(class="line full-width")
+                                span(class="line full-width")
                         nav
                             ul(class="d-flex align-center flex-row-xl") 
                                 li
-                                    a(href="#") Sobre Mí
+                                    a(href="#" class="p-relative") Sobre Mí
                                 li
-                                    a(href="#") Proyectos
+                                    a(href="#" class="p-relative") Proyectos
                                 li
-                                    a(href="#") Experiencia
+                                    a(href="#" class="p-relative") Experiencia
                                 li
-                                    a(href="#") Certificados
+                                    a(href="#" class="p-relative") Certificados
                                 li
-                                    a(href="#") Contactar
+                                    a(href="#" class="p-relative") Contactar
                         div(class="menu__footer container d-flex align-center jc-between")
                             a(href="#" class="btn btn-secondary"): span Enviar Correo 
                             ul(class="d-flex align-center social-list")
@@ -65,29 +65,29 @@ html(lang="es" data-theme="")
                                 li
                                     a: i(class="fa fa-instagram")
                     div(class="d-flex align-center flex-column-xl p-relative settings")
-                        div(class="menu__toggle")
-                            input(type="checkbox" name="toggle-theme" id="toggle-theme")
-                            i(class="fa fa-moon" aria-hidden="true")
-                            i(class="fa fa-sun" aria-hidden="true")
-                            span
+                        div(class="menu__toggle p-relative")
+                            input(type="checkbox" name="toggle-theme" id="toggle-theme" class="full-width")
+                            i(class="fa fa-moon p-absolute" aria-hidden="true")
+                            i(class="fa fa-sun p-absolute" aria-hidden="true")
+                            span(class="p-absolute")
                         div(class="menu__colour-variations")
                             a(class="btn-toggle" id="btn-colors"): i(class="fas fa-cog" aria-hidden="true")
                             div(class="menu__preset-colors p-absolute")
                                 h3 Seleccione el tema
                                 ul(class="menu__list-theme")
-                                    li
+                                    li(class="full-width")
                                         div(onclick="javascript:changeTheme('default');")
                                             span(class="theme-color" style="background:#3959a2;")
                                             span(class="theme-color" style="background:#a8dbd2;")
-                                    li 
+                                    li(class="full-width") 
                                         div(onclick="javascript:changeTheme('purple');")
                                             span(class="theme-color" style="background:#9A9CEA;")
                                             span(class="theme-color" style="background:#A2DCEE;")
-                                    li 
+                                    li(class="full-width") 
                                         div(onclick="javascript:changeTheme('gray');")
                                             span(class="theme-color" style="background:#78A6C8;")
                                             span(class="theme-color" style="background:#E65C4F;")
-                                    li 
+                                    li(class="full-width") 
                                         div(onclick="javascript:changeTheme('green');")
                                             span(class="theme-color" style="background:#53D2B2;")
                                             span(class="theme-color" style="background:#FFE3B3;")
