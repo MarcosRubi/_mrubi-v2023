@@ -1,11 +1,14 @@
-
 @media (min-width:1200px) {
     .flex-column-xl {
         flex-direction: column;
         height: 100%;
     }
-    .flex-row-xl{
+
+    .flex-row-xl {
         flex-direction: row
     }
+
     @include menu-xl;
+    @include base-xl;
+
 }

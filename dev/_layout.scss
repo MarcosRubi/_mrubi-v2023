@@ -1,6 +1,8 @@
 // ESTILOS HEADER
 .menu {
     padding: 1rem 0;
+    z-index: 100;
+    background-color: var(--bg-color);
 
     &::before {
         content: '';
@@ -239,7 +241,7 @@
             left: -50%;
             top: 150%;
             cursor: pointer;
-            animation: toBottom 2s linear, fadeIn 1s reverse 2s;
+            animation: toBottom 3s linear, fadeIn 3s;
 
             &::after {
                 content: '';
@@ -306,6 +308,24 @@
         }
     }
 
+}
+.banner{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+        font-size: 3rem;
+        text-align: center;
+        span{
+            color: var(--color-hover);
+        }
+    }
+    p{
+        text-align: center;
+        animation: fadeIn 4s linear;
+    }
 }
 
 

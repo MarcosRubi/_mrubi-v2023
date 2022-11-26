@@ -91,4 +91,12 @@ html(lang="es" data-theme="")
                                         div(onclick="javascript:changeTheme('green');")
                                             span(class="theme-color" style="background:#53D2B2;")
                                             span(class="theme-color" style="background:#FFE3B3;")
+        section(class="banner")
+            canvas(width="100" height="100" id="banner__bg" class="p-absolute")
+            h1(class="gsap-animation") Hola, soy
+                span &nbsp;Marcos Rubí
+            p Técnico en redes y sistemas operativos, actualmente estudiante de último año en ingeniería de sistemas y redes.
+
+        script(src="https://unpkg.com/split-type") 
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer")
         script(src="js/scripts.js") 
