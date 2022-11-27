@@ -3,6 +3,7 @@
     padding: 1rem 0;
     z-index: 100;
     background-color: var(--bg-color);
+    transition: background-color 500ms;
 
     &::before {
         content: '';
@@ -241,7 +242,8 @@
             left: -50%;
             top: 150%;
             cursor: pointer;
-            animation: toBottom 3s linear, fadeIn 3s;
+            animation: toBottom 3s linear, fadeIn 3s linear;
+            animation-delay: 2s;
 
             &::after {
                 content: '';
@@ -318,6 +320,10 @@
     h1{
         font-size: 3rem;
         text-align: center;
+        opacity: 0;
+        &.visible{
+            opacity: 1;
+        }
         span{
             color: var(--color-hover);
         }
@@ -426,7 +432,8 @@
             span {
                 left: 150%;
                 top: 25%;
-                animation: toRight 2s linear, fadeIn 1s reverse 2s;
+                animation: toRight 3s linear, fadeIn 3s linear;
+                animation-delay: 2s;
 
                 &::after {
                     left: -5%;

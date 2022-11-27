@@ -17,6 +17,45 @@ const changeModeDark = () => {
     updateTheme();
 };
 
+//Fondo del banner
+const effectMatrix = ()=>{
+    const bannerBg = document.getElementById('banner__bg')
+    const context = bannerBg.getContext('2d')
+
+    bannerBg.setAttribute('height', window.screen.height)
+    bannerBg.width = document.body.offsetWidth
+    
+    let w = bannerBg.width
+    let h = bannerBg.height
+    
+    let cols = Math.floor(w/20)+1
+    let positionY = Array(cols).fill(0)
+
+
+    let repeater = setInterval(() => {
+        effect()
+    }, 100);
+    
+    window.onresize = ()=>{
+        clearInterval(repeater)
+        effectMatrix()
+    }
+
+    const effect = ()=>{
+        context.clearRect(0,0,w,h)
+
+        context.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-link');
+        context.font = '12pt Telex'
+
+        positionY.forEach((y, index)=>{
+            const text = String.fromCharCode(Math.random()*128)
+            const x = index * 20
+            context.fillText(text, x, y)
+            y > 100 + Math.random() * 10000 ? positionY[index] = 0 : positionY[index]  += 20
+        })
+    }
+}
+
 window.onload = () => {
     var preferenceThemeSystem =
         window.matchMedia &&
@@ -70,8 +109,11 @@ window.onload = () => {
         changeModeDark();
     };
     setTimeout(() => {
-        messageSpan.classList.add('hide')
-    }, 2500);
+        messageSpan.classList.remove('hide')
+        setTimeout(() => {
+            messageSpan.classList.add('hide')
+        }, 5000);
+    }, 2000);
 
     //Animaciones sección banner
     //Titulo
@@ -82,39 +124,26 @@ window.onload = () => {
         delay: 0.2,
         duration: 0.1
     })
-    //Fondo del banner
-    const effectMatrix = ()=>{
-        const bannerBg = document.getElementById('banner__bg')
-        const context = bannerBg.getContext('2d')
-
-        bannerBg.setAttribute('height', window.screen.height)
-        bannerBg.width = document.body.offsetWidth
-
-        const w = bannerBg.width
-        const h = bannerBg.height
-
-        const cols = Math.floor(w/20)+1
-        const positionY = Array(cols).fill(0)
-
-        setInterval(() => {
-            effect()
-        }, 100);
-
-        const effect = ()=>{
-            context.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--bg-color')
-            context.fillRect(0,0,w,h)
     
-            context.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-link');
-            context.font = '15pt monospace'
-    
-            positionY.forEach((y, index)=>{
-                const text = String.fromCharCode(Math.random()*128)
-                const x = index * 20
-                context.fillText(text, x, y)
-                y > 100 + Math.random() * 10000 ? positionY[index] = 0 : positionY[index]  += 20
-            })
-        }
-    }
     effectMatrix()
-
+    
 };
+
+
+const startAnimation = (entries, observer) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+};
+
+const observer = new IntersectionObserver(startAnimation, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+});
+
+const bannerTitle = document.querySelector('.banner h1')
+
+observer.observe(bannerTitle)
