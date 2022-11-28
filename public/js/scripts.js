@@ -129,7 +129,6 @@ window.onload = () => {
     
 };
 
-
 const startAnimation = (entries, observer) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -144,6 +143,6 @@ const observer = new IntersectionObserver(startAnimation, {
     threshold: 0.1,
 });
 
-const bannerTitle = document.querySelector('.banner h1')
+const banner = document.querySelector('.banner')
 
-observer.observe(bannerTitle)
+observer.observe(banner)

@@ -127,7 +127,11 @@ canvas{
     height: 100%;
     pointer-events: none;
     top: 0%;
-    z-index: -1;
+    z-index: 0;
+    padding-top: 4.1rem;
+}
+.h{
+    height: 200vh;
 }
 .container {
     max-width: 1440px;
@@ -174,4 +178,8 @@ canvas{
 }
 
 @mixin base-xl {
+    canvas{
+        padding-top: 0rem;
+        padding-left: 4.1rem;
+    }
 }

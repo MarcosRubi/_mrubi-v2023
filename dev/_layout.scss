@@ -2,8 +2,6 @@
 .menu {
     padding: 1rem 0;
     z-index: 100;
-    background-color: var(--bg-color);
-    transition: background-color 500ms;
 
     &::before {
         content: '';
@@ -311,27 +309,52 @@
     }
 
 }
-.banner{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    h1{
-        font-size: 3rem;
-        text-align: center;
-        opacity: 0;
-        &.visible{
+
+.banner {
+    &__content {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .btn-primary {
+            padding: 1rem;
+            opacity: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            opacity: 0;
+            text-shadow: 0px 0px 2px var(--text-color);
+            span {
+                color: var(--color-hover);
+            }
+        }
+
+        p {
+            text-align: center;
+            margin: 1rem 0;
+            opacity: 0;
+        }
+    }
+    
+    &.visible {
+        h1 {
             opacity: 1;
         }
-        span{
-            color: var(--color-hover);
+        p{
+            opacity: 1;
+            animation: fadeIn 3s linear;
+        }
+
+        .btn-primary {
+            opacity: 1;
+            animation: fadeIn 4s linear;
         }
     }
-    p{
-        text-align: center;
-        animation: fadeIn 4s linear;
-    }
+
 }
 
 
@@ -476,5 +499,13 @@
             }
         }
 
+    }
+
+    .banner {
+        font-size: 20px;
+
+        &__content {
+            padding-left: 2rem;
+        }
     }
 }
