@@ -118,8 +118,6 @@ a{
 }
 li{
     list-style: none;
-    display: block;
-    width: 100%;
 }
 
 canvas{
@@ -167,10 +165,6 @@ canvas{
 }
 .full-width{
     width: 100%;
-}
-.char{
-    transform: translateY(115px);
-    transition: transform .5s;
 }
 
 .gsap-animation{

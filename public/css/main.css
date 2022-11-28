@@ -121,8 +121,6 @@ a {
 
 li {
   list-style: none;
-  display: block;
-  width: 100%;
 }
 
 canvas {
@@ -178,11 +176,6 @@ canvas {
 
 .full-width {
   width: 100%;
-}
-
-.char {
-  transform: translateY(115px);
-  transition: transform 0.5s;
 }
 
 .gsap-animation {
@@ -536,7 +529,6 @@ canvas {
 }
 .menu__content .menu__close,
 .menu__content .logo span,
-.menu__content nav li,
 .menu__content .btn,
 .menu__content .social-list li {
   opacity: 0;
@@ -551,26 +543,6 @@ canvas {
   opacity: 1;
 }
 .menu__content.visible .logo span {
-  animation: fadeIn 2.5s linear, toLeft 1s linear;
-  opacity: 1;
-}
-.menu__content.visible nav li:first-child {
-  animation: fadeIn 1.75s linear, toLeft 1s linear;
-  opacity: 1;
-}
-.menu__content.visible nav li:nth-child(2) {
-  animation: fadeIn 2s linear, toLeft 1s linear;
-  opacity: 1;
-}
-.menu__content.visible nav li:nth-child(3) {
-  animation: fadeIn 2.25s linear, toLeft 1s linear;
-  opacity: 1;
-}
-.menu__content.visible nav li:nth-child(4) {
-  animation: fadeIn 2.5s linear, toLeft 1s linear;
-  opacity: 1;
-}
-.menu__content.visible nav li:last-child {
   animation: fadeIn 2.5s linear, toLeft 1s linear;
   opacity: 1;
 }
@@ -710,6 +682,10 @@ canvas {
   zoom: 1;
   border-radius: 2px 0px 0px 2px;
 }
+.menu .word {
+  transform: translateY(150px);
+  transition: transform 1s;
+}
 
 .banner__content {
   height: 100vh;
@@ -746,6 +722,10 @@ canvas {
 .banner.visible .btn-primary {
   opacity: 1;
   animation: fadeIn 4s linear;
+}
+.banner .char {
+  transform: translateY(115px);
+  transition: transform 0.5s;
 }
 
 @media (min-width: 1200px) {

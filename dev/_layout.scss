@@ -307,6 +307,10 @@
             border-radius: 2px 0px 0px 2px;
         }
     }
+    .word{
+        transform: translateY(150px);
+        transition: transform 1s;
+    }
 
 }
 
@@ -353,6 +357,10 @@
             opacity: 1;
             animation: fadeIn 4s linear;
         }
+    }
+    .char{
+        transform: translateY(115px);
+        transition: transform .5s;
     }
 
 }
