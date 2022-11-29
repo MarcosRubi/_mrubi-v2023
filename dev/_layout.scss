@@ -42,7 +42,7 @@
     &__toggle {
         width: 5rem;
         height: 35px;
-        background: var(--color-link);
+        background: var(--color-hover);
         border-radius: 50px;
 
         & input {
@@ -75,7 +75,7 @@
                 width: 25px;
                 height: 25px;
                 transform: translate(5px, -50%);
-                background: var(--color-link);
+                background: var(--color-hover);
                 border-radius: 50px;
                 transition: all 400ms;
                 filter: contrast(60%);
@@ -164,6 +164,9 @@
         background-color: var(--bg-footer);
         transition: all .5s;
         z-index: 1000;
+        nav{
+            visibility: hidden;
+        }
 
         .logo {
             pointer-events: none;
@@ -267,6 +270,7 @@
         margin-left: 30px;
         cursor: pointer;
         animation: fadeIn 1.5s linear;
+        color:var(--color-hover);
     }
 
     &__colour-variations i {
@@ -307,7 +311,8 @@
             border-radius: 2px 0px 0px 2px;
         }
     }
-    .word{
+
+    .word {
         transform: translateY(150px);
         transition: transform 1s;
     }
@@ -315,15 +320,22 @@
 }
 
 .banner {
+    background-image: url(https://mrubi.vercel.app/images/bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 4.19rem;
+
     &__content {
         height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        background: linear-gradient(90deg, var(--color-link-alpha), var(--color-hover-alpha));
+        font-weight: 900;
 
         .btn-primary {
-            padding: 1rem;
+            padding: 1.25rem 1rem;
             opacity: 0;
         }
 
@@ -331,9 +343,12 @@
             font-size: 3rem;
             text-align: center;
             opacity: 0;
-            text-shadow: 0px 0px 2px var(--text-color);
+            color: white;
+            
             span {
-                color: var(--color-hover);
+                text-shadow: 0 0 5px var(--color-link), 0 0 10px var(--color-link), 0 0 20px var(--color-link);
+                filter: contrast(200%);
+                color: white;
             }
         }
 
@@ -341,24 +356,27 @@
             text-align: center;
             margin: 1rem 0;
             opacity: 0;
+            color: white;
         }
     }
-    
+
     &.visible {
         h1 {
             opacity: 1;
         }
-        p{
+
+        p {
             opacity: 1;
             animation: fadeIn 3s linear;
         }
 
         .btn-primary {
             opacity: 1;
-            animation: fadeIn 4s linear;
+            animation: fadeIn 4s ease-in-out;
         }
     }
-    .char{
+
+    .char {
         transform: translateY(115px);
         transition: transform .5s;
     }
@@ -511,6 +529,8 @@
 
     .banner {
         font-size: 20px;
+        background-position: 4rem 0rem;
+
 
         &__content {
             padding-left: 2rem;

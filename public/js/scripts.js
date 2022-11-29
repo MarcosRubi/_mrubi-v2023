@@ -29,7 +29,7 @@ const gsapAnimationText = (element, character)=>{
 }
 //Fondo del banner
 const effectMatrix = ()=>{
-    const bannerBg = document.getElementById('banner__bg')
+    const bannerBg = document.getElementById('effectMatrix')
     const context = bannerBg.getContext('2d')
 
     bannerBg.setAttribute('height', window.screen.height)
@@ -55,7 +55,7 @@ const effectMatrix = ()=>{
         context.clearRect(0,0,w,h)
 
         context.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-link');
-        context.font = '12pt Telex'
+        context.font = '5pt Telex'
 
         positionY.forEach((y, index)=>{
             const text = String.fromCharCode(Math.random()*128)

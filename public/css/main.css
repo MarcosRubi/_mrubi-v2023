@@ -45,9 +45,9 @@
 [data-theme=gray-light] {
   --bg-color: #f5f5f5;
   --text-color: #212121;
-  --color-link: rgba(43, 71, 89, 1);
+  --color-link: rgb(67, 112, 139);
   --color-hover: rgb(234, 53, 36);
-  --color-link-alpha: rgba(21, 47, 62, 0.8);
+  --color-link-alpha: rgba(67, 112, 139, 0.8);
   --color-hover-alpha: rgba(231, 47, 30, 0.8);
   --bg-footer: rgb(207, 216, 220);
   --font-title: "Telex", sans-serif;
@@ -127,13 +127,12 @@ canvas {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  top: 0%;
   z-index: 0;
-  padding-top: 4.1rem;
 }
 
 .h {
   height: 200vh;
+  position: relative;
 }
 
 .container {
@@ -344,7 +343,7 @@ canvas {
   z-index: 5;
 }
 .btn:hover::before {
-  transform: translate(-50%, -50%) scale(250);
+  transform: translate(-50%, -50%) scale(350);
 }
 
 .btn-primary {
@@ -416,7 +415,7 @@ canvas {
 .menu__toggle {
   width: 5rem;
   height: 35px;
-  background: var(--color-link);
+  background: var(--color-hover);
   border-radius: 50px;
 }
 .menu__toggle input {
@@ -447,7 +446,7 @@ canvas {
   width: 25px;
   height: 25px;
   transform: translate(5px, -50%);
-  background: var(--color-link);
+  background: var(--color-hover);
   border-radius: 50px;
   transition: all 400ms;
   filter: contrast(60%);
@@ -524,6 +523,9 @@ canvas {
   transition: all 0.5s;
   z-index: 1000;
 }
+.menu__content nav {
+  visibility: hidden;
+}
 .menu__content .logo {
   pointer-events: none;
 }
@@ -565,6 +567,9 @@ canvas {
 .menu__content.visible .social-list li:last-child {
   animation: fadeIn 3.5s linear, toLeft 1s linear;
   opacity: 1;
+}
+.menu__content.visible nav {
+  visibility: visible;
 }
 .menu__header, .menu__footer {
   height: 2rem;
@@ -647,6 +652,7 @@ canvas {
   margin-left: 30px;
   cursor: pointer;
   animation: fadeIn 1.5s linear;
+  color: var(--color-hover);
 }
 .menu__colour-variations i {
   font-size: 1.75rem;
@@ -687,30 +693,41 @@ canvas {
   transition: transform 1s;
 }
 
+.banner {
+  background-image: url(https://mrubi.vercel.app/images/bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 4.19rem;
+}
 .banner__content {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background: linear-gradient(90deg, var(--color-link-alpha), var(--color-hover-alpha));
+  font-weight: 900;
 }
 .banner__content .btn-primary {
-  padding: 1rem;
+  padding: 1.25rem 1rem;
   opacity: 0;
 }
 .banner__content h1 {
   font-size: 3rem;
   text-align: center;
   opacity: 0;
-  text-shadow: 0px 0px 2px var(--text-color);
+  color: white;
 }
 .banner__content h1 span {
-  color: var(--color-hover);
+  text-shadow: 0 0 5px var(--color-link), 0 0 10px var(--color-link), 0 0 20px var(--color-link);
+  filter: contrast(200%);
+  color: white;
 }
 .banner__content p {
   text-align: center;
   margin: 1rem 0;
   opacity: 0;
+  color: white;
 }
 .banner.visible h1 {
   opacity: 1;
@@ -721,7 +738,7 @@ canvas {
 }
 .banner.visible .btn-primary {
   opacity: 1;
-  animation: fadeIn 4s linear;
+  animation: fadeIn 4s ease-in-out;
 }
 .banner .char {
   transform: translateY(115px);
@@ -853,13 +870,13 @@ canvas {
 
   .banner {
     font-size: 20px;
+    background-position: 4rem 0rem;
   }
   .banner__content {
     padding-left: 2rem;
   }
 
   canvas {
-    padding-top: 0rem;
     padding-left: 4.1rem;
   }
 }
