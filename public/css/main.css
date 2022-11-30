@@ -347,10 +347,10 @@ canvas {
 }
 
 .btn-primary {
-  background-color: var(--text-color);
+  background-color: var(--bg-color);
 }
 .btn-primary span, .btn-primary i {
-  color: var(--bg-color);
+  color: var(--text-color);
 }
 .btn-primary::before {
   background-color: var(--color-link);
@@ -652,7 +652,7 @@ canvas {
   margin-left: 30px;
   cursor: pointer;
   animation: fadeIn 1.5s linear;
-  color: var(--color-hover);
+  color: var(--text-color);
 }
 .menu__colour-variations i {
   font-size: 1.75rem;
@@ -716,18 +716,19 @@ canvas {
   font-size: 3rem;
   text-align: center;
   opacity: 0;
-  color: white;
+  color: #fffcff;
 }
 .banner__content h1 span {
   text-shadow: 0 0 5px var(--color-link), 0 0 10px var(--color-link), 0 0 20px var(--color-link);
   filter: contrast(200%);
-  color: white;
+  color: #fffcff;
 }
 .banner__content p {
   text-align: center;
   margin: 1rem 0;
   opacity: 0;
-  color: white;
+  color: #fffcff;
+  text-shadow: 0px 0px 3px #0e0f26;
 }
 .banner.visible h1 {
   opacity: 1;
