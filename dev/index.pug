@@ -96,11 +96,60 @@ html(lang="es" data-theme="")
                 h1(class="gsap-animation") Hola, soy
                     span &nbsp;Marcos Rubí
                 p Técnico en redes y sistemas operativos, actualmente estudiante de último año en ingeniería de sistemas y redes.
-                a(href="#" class="btn btn-primary")
+                a(href="#" class="btn btn-banner")
                     span Descargar CV
                     i(class="fa fa-download")
-        section(class="h")
+        main
             canvas(width="100" height="100" id="effectMatrix")
+            footer
+                div(class="d-flex flex-row-xl jc-center container p-relative")
+                    div(class="left")
+                        h2(class="gsap-animation") Listo para 
+                            span contactar?
+                        button(class="btn btn-primary" id="show-contact"): span Enviar Correo
+                        ul(class="d-flex align-center social-list")
+                                li
+                                    a: i(class="fab fa-linkedin-in")
+                                li
+                                    a: i(class="fa fa-facebook-f")
+                                li
+                                    a: i(class="fa fa-twitter")
+                                li
+                                    a: i(class="fa fa-instagram")
+                    div(class="right")
+                        div(class="repositories")
+                            h2(class="gsap-animation"): span Repositorios
+                            div(class="repositories__item d-flex")
+                                div: i(class="fa fa-github")
+                                div
+                                    span(class="d-block") GitHub
+                                    a(href="#") Visitar 
+                            div(class="repositories__item d-flex")
+                                div: i(class="fa fa-code")
+                                div
+                                    span(class="d-block") Frontent Mentor
+                                    a(href="#") Visitar 
+                            div(class="repositories__item d-flex")
+                                div: i(class="fa fa-codepen")
+                                div
+                                    span(class="d-block") Codepen
+                                    a(href="#") Visitar
+                        div(class="contact-form")
+                            h2(class="gsap-animation"): span Enviar Correo
+                            form(action="#", method="post")
+                                div(class="input-group p-relative")
+                                    input(type="text", name="txtName" id="txtName" required="required")
+                                    label(for="txtName" class="p-absolute") Nombre
+                                    span(class="p-absolute"): i(class="fa fa-user")
+                                div(class="input-group p-relative")
+                                    input(type="email", name="txtEmail" id="txtEmail" required="required")
+                                    label(for="txtEmail" class="p-absolute") Email
+                                    span(class="p-absolute"): i(class="fa fa-envelope")
+                                div(class="input-group p-relative")
+                                    textarea(name="txtMessage", cols="30", rows="5" required="required")
+                                    label(for="txtMessage" class="p-absolute") Mensaje
+                                    span(class="p-absolute"): i(class="fa fa-comment")
+                                button(type="submit" class="btn btn-primary"): span Enviar Mensaje 
         script(src="https://unpkg.com/split-type") 
         script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer")
         script(src="js/scripts.js") 

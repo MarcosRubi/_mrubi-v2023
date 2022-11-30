@@ -55,7 +55,7 @@ const effectMatrix = ()=>{
         context.clearRect(0,0,w,h)
 
         context.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-link');
-        context.font = '5pt Telex'
+        context.font = '10pt Telex'
 
         positionY.forEach((y, index)=>{
             const text = String.fromCharCode(Math.random()*128)
@@ -113,6 +113,16 @@ window.onload = () => {
 
     effectMatrix()
     gsapAnimationText('.banner h1', '.char')
+    gsapAnimationText('footer h2', '.char')
+
+    //Mostrar formulario en vista desktop
+    const btnContact = document.querySelector('#show-contact')
+    btnContact.onclick = ()=>{
+        document.querySelector('footer').classList.toggle('show-form')
+        btnContact.textContent.includes('Enviar') 
+        ? btnContact.querySelector('span').innerText = "Ver Repositorios" 
+        : btnContact.querySelector('span').innerText = "Enviar Correo"     
+    }
 };
 
 const startAnimation = (entries, observer) => {

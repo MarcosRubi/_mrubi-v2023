@@ -1,17 +1,21 @@
 // Estilos de los botones
 
 .btn {
-    padding: 0.75rem 1rem;
+    padding: 1rem 1.25rem;
     border-radius: .25rem;
     position: relative;
     overflow: hidden;
     display: inline-block;
+    border: none;
+    cursor: pointer;
     
     span, i {
         position: relative;
         z-index: 10;
         transition: color .75s;
         font-weight: bold;
+        pointer-events: none;
+        text-shadow: none;
     }
     i{
         padding-left: .5rem;
@@ -33,9 +37,18 @@
         transform: translate(-50%, -50%) scale(350);
     }
 }
+.btn-banner{
+    background-color: var(--bg-color);
+    span, i{
+        color: var(--text-color);
+    }
+    &::before{
+        background-color: var(--color-link);
+    }
+}
 
 .btn-primary{
-    background-color: var(--bg-color);
+    background-color: var(--color-link-alpha);
     span, i{
         color: var(--text-color);
     }

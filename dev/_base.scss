@@ -92,44 +92,50 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    font-family: "Montserrat",sans-serif;
+
+body {
+    font-family: "Montserrat", sans-serif;
     background-color: var(--bg-color);
     transition: background-color .5s;
     color: var(--text-color);
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
-nav a{
+nav a {
     font-family: var(--font-title);
 }
 
-h3{
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
     font-size: .75rem;
     margin-bottom: 0.5rem;
 }
-a{
+
+a {
     text-decoration: none;
     color: var(--color-link);
     cursor: pointer;
 }
-li{
+
+li {
     list-style: none;
 }
 
-canvas{
+canvas {
     width: 100%;
     height: 100%;
     pointer-events: none;
     z-index: 0;
 }
-.h{
-    height: 200vh;
-    position: relative;
-}
+
+
 .container {
     max-width: 1440px;
     margin: 0px auto;
@@ -140,6 +146,10 @@ canvas{
     display: flex;
 }
 
+.d-block {
+    display: block;
+}
+
 .align-center {
     align-items: center;
 }
@@ -147,31 +157,120 @@ canvas{
 .jc-between {
     justify-content: space-between;
 }
-.jc-center{
+
+.jc-center {
     justify-content: center;
 }
+
 .p-fixed {
     position: fixed;
 }
-.p-relative{
+
+.p-relative {
     position: relative;
 }
-.p-absolute{
+
+.p-absolute {
     position: absolute;
 }
-.flex-row-xl{
+
+.flex-row-xl {
     flex-direction: column;
 }
-.full-width{
+
+.full-width {
     width: 100%;
 }
 
-.gsap-animation{
+.gsap-animation {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
+.social-list a {
+    transition: all 300ms;
+    padding: .5rem .75rem;
+    display: block;
+    font-size: 1.25rem;
+
+    &:hover {
+        color: var(--color-hover);
+        transform: scale(1.25);
+    }
+}
+
+span {
+    text-shadow: 0 0 2px var(--color-link), 0 0 5px var(--color-link), 0 0 10px var(--color-link);
+    filter: contrast(200%);
+    color: #fffcff;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding-left: 2.5rem;
+    outline: none;
+    border: none;
+    border-radius: .25rem;
+    font-family: var(--font-title);
+    font-size: 1rem;
+}
+
+textarea {
+    padding: .7rem 2rem .7rem 2.5rem;
+    resize: none;
+}
+
+.contact-form {
+    padding-top: 2rem;
+    max-width: 500px;
+}
+
+.input-group {
+    margin: 2rem 0 .5rem 0;
+
+    input {
+        height: 50px;
+    }
+
+    label,
+    span {
+        top: .9rem;
+        left: 2.5rem;
+        color: #555;
+        pointer-events: none;
+        transition: all .5s;
+    }
+
+    span {
+        left: .5rem;
+        text-shadow: none;
+        font-size: 1.25rem;
+    }
+
+    input:valid~label,
+    input:focus~label,
+    textarea:valid~label,
+    textarea:focus~label {
+        transform: translate(-2.5rem, -2.1rem);
+        color: var(--text-color);
+    }
+
+    input:valid~span,
+    input:focus~span,
+    textarea:valid~span,
+    textarea:focus~span {
+        color: var(--color-link);
+    }
+}
+
 @mixin base-xl {
-    canvas{
+    canvas {
         padding-left: 4.1rem;
+    }
+
+    main.container {
+        padding-left: 4rem;
+        width: 100%;
     }
 }

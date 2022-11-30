@@ -171,6 +171,9 @@
         .logo {
             pointer-events: none;
         }
+        .btn-secondary{
+            padding: 1rem 1rem;
+        }
 
         @include menu-content-animations;
     }
@@ -217,17 +220,6 @@
         }
     }
 
-    .social-list a {
-        transition: all 300ms;
-        padding: .5rem .75rem;
-        display: block;
-
-        &:hover {
-            color: var(--color-hover);
-            transform: scale(1.25);
-        }
-    }
-
     &__toggle {
         animation: fadeIn 1.25s linear;
 
@@ -245,6 +237,7 @@
             cursor: pointer;
             animation: toBottom 3s linear, fadeIn 3s linear;
             animation-delay: 2s;
+            text-shadow: none;
 
             &::after {
                 content: '';
@@ -334,7 +327,7 @@
         background: linear-gradient(90deg, var(--color-link-alpha), var(--color-hover-alpha));
         font-weight: 900;
 
-        .btn-primary {
+        .btn {
             padding: 1.25rem 1rem;
             opacity: 0;
         }
@@ -344,12 +337,6 @@
             text-align: center;
             opacity: 0;
             color: #fffcff;
-            
-            span {
-                text-shadow: 0 0 5px var(--color-link), 0 0 10px var(--color-link), 0 0 20px var(--color-link);
-                filter: contrast(200%);
-                color: #fffcff;
-            }
         }
 
         p {
@@ -371,7 +358,7 @@
             animation: fadeIn 3s linear;
         }
 
-        .btn-primary {
+        .btn {
             opacity: 1;
             animation: fadeIn 4s ease-in-out;
         }
@@ -383,7 +370,52 @@
     }
 
 }
+footer{
+    background-color: var(--bg-footer);
+    padding: 2rem 0;
+    .btn {
+        padding: 1.25rem 2.5rem;
+        font-size: 1rem;
 
+        span {
+            color: #f5f5f5;
+        }
+    }
+    #show-contact{
+        display: none;
+    }
+    .social-list a{
+        font-size: 2rem;
+    }
+    
+    .left{
+        width: 100%;
+        .btn{
+            margin: 1.25rem 0; 
+        }
+    }
+    .right{
+        padding-top: 4rem;
+        width: 100%;
+        .repositories__item{
+            margin: 2rem 0;
+            div:first-child{
+                margin-right: 1.25rem;
+                font-size: 2rem;
+                width: 32px;
+                height: 32px;
+            }
+            span,
+            a{
+                font-size: 1.15rem;
+            }
+        }
+    }
+    .char {
+        transform: translateY(115px);
+        transition: transform .5s;
+    }
+}
 
 // ESTILOS MENU PANTALLAS > 1200px
 @mixin menu-xl {
@@ -535,6 +567,44 @@
 
         &__content {
             padding-left: 2rem;
+        }
+    }
+    footer{
+        min-height: 475px;
+        #show-contact{
+            display: block;
+        }
+        .container{
+            margin-left: 4.1rem;
+        }
+        .repositories{
+            transition: opacity 1s;
+        }
+        .right{
+            padding-top: 0;
+            padding-right: 2rem;
+            width: 40%;
+            .contact-form{
+                padding-top: 0;
+                opacity: 0;
+                display: none;
+            }
+        }
+        .left{
+            width: 40%;
+        }
+        &.show-form{
+            .contact-form{
+                opacity: 1;
+                height: auto;
+                transition: opacity 1s;
+                visibility: visible;
+                display: block;
+            }
+            .repositories{
+                height: 0px;
+                opacity: 0;
+            }
         }
     }
 }
