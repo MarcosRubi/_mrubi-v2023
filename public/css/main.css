@@ -7,6 +7,7 @@
   --color-hover-alpha: rgba(6, 196, 158, 0.8);
   --bg-footer: rgb(207, 216, 220);
   --font-title: "Telex", sans-serif;
+  --text-shadow: none;
 }
 
 [data-theme=default-dark] {
@@ -18,6 +19,7 @@
   --color-hover-alpha: rgba(168, 219, 210, 0.8);
   --bg-footer: #212121;
   --font-title: "Telex", sans-serif;
+  --text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
 }
 
 [data-theme=purple-light] {
@@ -29,6 +31,7 @@
   --color-hover-alpha: rgba(60, 143, 157, 0.8);
   --bg-footer: rgb(207, 216, 220);
   --font-title: "Telex", sans-serif;
+  --text-shadow: none;
 }
 
 [data-theme=purple-dark] {
@@ -40,6 +43,7 @@
   --color-hover-alpha: rgba(173, 238, 226, 0.8);
   --bg-footer: #212121;
   --font-title: "Telex", sans-serif;
+  --text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
 }
 
 [data-theme=gray-light] {
@@ -51,6 +55,7 @@
   --color-hover-alpha: rgba(231, 47, 30, 0.8);
   --bg-footer: rgb(207, 216, 220);
   --font-title: "Telex", sans-serif;
+  --text-shadow: none;
 }
 
 [data-theme=gray-dark] {
@@ -62,6 +67,7 @@
   --color-hover-alpha: rgba(230, 92, 79, 0.8);
   --bg-footer: #212121;
   --font-title: "Telex", sans-serif;
+  --text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
 }
 
 [data-theme=green-light] {
@@ -73,6 +79,7 @@
   --color-hover-alpha: rgba(204, 173, 118, 0.8);
   --bg-footer: rgb(207, 216, 220);
   --font-title: "Telex", sans-serif;
+  --text-shadow: none;
 }
 
 [data-theme=green-dark] {
@@ -84,6 +91,7 @@
   --color-hover-alpha: rgba(246, 208, 141, 0.8);
   --bg-footer: #212121;
   --font-title: "Telex", sans-serif;
+  --text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
 }
 
 * {
@@ -200,9 +208,9 @@ canvas {
 }
 
 span {
-  text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
-  filter: contrast(200%);
+  text-shadow: var(--text-shadow);
   color: var(--text-color);
+  filter: contrast(200%);
 }
 
 input[type=text],
@@ -648,6 +656,9 @@ textarea {
   animation: fadeIn 2.75s linear, toLeft 1s linear;
   opacity: 1;
 }
+.menu__content.visible nav {
+  visibility: visible;
+}
 .menu__content.visible .social-list li:first-child {
   animation: fadeIn 2.75s linear, toLeft 1s linear;
   opacity: 1;
@@ -663,9 +674,6 @@ textarea {
 .menu__content.visible .social-list li:last-child {
   animation: fadeIn 3.5s linear, toLeft 1s linear;
   opacity: 1;
-}
-.menu__content.visible nav {
-  visibility: visible;
 }
 .menu__header, .menu__footer {
   height: 2rem;
@@ -867,13 +875,53 @@ footer .right .repositories__item div:first-child {
   width: 32px;
   height: 32px;
 }
-footer .right .repositories__item span,
-footer .right .repositories__item a {
+footer .right .repositories__item span {
   font-size: 1.15rem;
+}
+footer .right .repositories__item a {
+  font-size: 1.25rem;
 }
 footer .char {
   transform: translateY(115px);
   transition: transform 0.5s;
+}
+footer .btn,
+footer .social-list li,
+footer .repositories__item,
+footer .right {
+  opacity: 0;
+}
+footer.visible .btn {
+  animation: fadeIn 2s linear;
+  opacity: 1;
+}
+footer.visible .social-list li {
+  animation: fadeIn 2.25s linear;
+  opacity: 1;
+}
+footer.visible .repositories__item {
+  animation: fadeIn 2.5s linear;
+  opacity: 1;
+}
+footer.visible .social-list li:first-child {
+  animation: fadeIn 2.75s linear, toLeft 1s linear;
+  opacity: 1;
+}
+footer.visible .social-list li:nth-child(2) {
+  animation: fadeIn 3s linear, toLeft 1s linear;
+  opacity: 1;
+}
+footer.visible .social-list li:nth-child(3) {
+  animation: fadeIn 3.25s linear, toLeft 1s linear;
+  opacity: 1;
+}
+footer.visible .social-list li:last-child {
+  animation: fadeIn 3.5s linear, toLeft 1s linear;
+  opacity: 1;
+}
+footer.visible .right {
+  animation: fadeIn 1s linear;
+  opacity: 1;
 }
 
 @media (min-width: 1200px) {
@@ -1037,8 +1085,11 @@ footer .char {
     justify-content: space-between;
     padding-left: 10rem;
   }
-  footer .left .social-list a {
+  footer .left .social-list li a {
     padding: 1rem 1.5rem;
+  }
+  footer .left .social-list li:first-child a {
+    padding-left: 0rem;
   }
   footer.show-form .contact-form {
     opacity: 1;

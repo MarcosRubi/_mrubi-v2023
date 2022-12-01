@@ -3,7 +3,7 @@
     .menu__close,
     .logo span,
     .btn,
-    .social-list li{
+    .social-list li {
         opacity: 0;
     }
 
@@ -26,30 +26,35 @@
             animation: fadeIn 2.75s linear, toLeft 1s linear;
             opacity: 1;
         }
-        .social-list li {
-            &:first-child {
-                animation: fadeIn 2.75s linear, toLeft 1s linear;
-                opacity: 1;
-            }
-
-            &:nth-child(2) {
-                animation: fadeIn 3s linear, toLeft 1s linear;
-                opacity: 1;
-            }
-
-            &:nth-child(3) {
-                animation: fadeIn 3.25s linear, toLeft 1s linear;
-                opacity: 1;
-            }
-
-            &:last-child {
-                animation: fadeIn 3.5s linear, toLeft 1s linear;
-                opacity: 1;
-            }
-        }
-        nav{
+        nav {
             visibility: visible;
         }
+        .social-list li{
+            @include social-list-animations;
+        }
+
+    }
+}
+
+@mixin social-list-animations {
+    &:first-child {
+        animation: fadeIn 2.75s linear, toLeft 1s linear;
+        opacity: 1;
+    }
+
+    &:nth-child(2) {
+        animation: fadeIn 3s linear, toLeft 1s linear;
+        opacity: 1;
+    }
+
+    &:nth-child(3) {
+        animation: fadeIn 3.25s linear, toLeft 1s linear;
+        opacity: 1;
+    }
+
+    &:last-child {
+        animation: fadeIn 3.5s linear, toLeft 1s linear;
+        opacity: 1;
     }
 }
 

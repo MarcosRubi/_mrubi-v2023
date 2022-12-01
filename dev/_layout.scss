@@ -417,10 +417,11 @@ footer {
                 width: 32px;
                 height: 32px;
             }
-
-            span,
-            a {
+            span{
                 font-size: 1.15rem;
+            }
+            a {
+                font-size: 1.25rem;
             }
         }
     }
@@ -428,6 +429,33 @@ footer {
     .char {
         transform: translateY(115px);
         transition: transform .5s;
+    }
+    .btn,
+    .social-list li,
+    .repositories__item,
+    .right{
+        opacity: 0;
+    }
+    &.visible{
+        .btn{
+            animation: fadeIn 2s linear;
+            opacity: 1;
+        }
+        .social-list li{
+            animation: fadeIn 2.25s linear;
+            opacity: 1;
+        }
+        .repositories__item{
+            animation: fadeIn 2.5s linear;
+            opacity: 1;
+        }
+        .social-list li{
+            @include social-list-animations;
+        }
+        .right{
+            animation: fadeIn 1s linear;
+            opacity: 1;
+        }
     }
 }
 
@@ -620,8 +648,13 @@ footer {
             justify-content: space-between;
             padding-left: 10rem;
 
-            .social-list a {
-                padding: 1rem 1.5rem;
+            .social-list li{
+                a{
+                    padding: 1rem 1.5rem;
+                }
+                &:first-child a{
+                    padding-left: 0rem;
+                }
             }
         }
 

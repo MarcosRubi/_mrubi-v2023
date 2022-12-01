@@ -8,6 +8,7 @@
     --color-hover-alpha: rgba(6, 196, 158, 0.8);
     --bg-footer: rgb(207, 216, 220);
     --font-title: "Telex", sans-serif;
+    --text-shadow: none; 
 }
 
 [data-theme="default-dark"] {
@@ -19,6 +20,7 @@
     --color-hover-alpha: rgba(168, 219, 210, 0.8);
     --bg-footer: #212121;
     --font-title: "Telex", sans-serif;
+    --text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
 }
 
 [data-theme="purple-light"] {
@@ -30,6 +32,7 @@
     --color-hover-alpha: rgba(60, 143, 157, 0.8);
     --bg-footer: rgb(207, 216, 220);
     --font-title: "Telex", sans-serif;
+    --text-shadow: none; 
 }
 
 [data-theme="purple-dark"] {
@@ -41,6 +44,7 @@
     --color-hover-alpha: rgba(173, 238, 226, 0.8);
     --bg-footer: #212121;
     --font-title: "Telex", sans-serif;
+    --text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
 }
 
 [data-theme="gray-light"] {
@@ -52,6 +56,7 @@
     --color-hover-alpha: rgba(231, 47, 30, 0.8);
     --bg-footer: rgb(207, 216, 220);
     --font-title: "Telex", sans-serif;
+    --text-shadow: none; 
 }
 
 [data-theme="gray-dark"] {
@@ -63,6 +68,7 @@
     --color-hover-alpha: rgba(230, 92, 79, 0.8);
     --bg-footer: #212121;
     --font-title: "Telex", sans-serif;
+    --text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
 }
 
 [data-theme="green-light"] {
@@ -74,6 +80,7 @@
     --color-hover-alpha: rgba(204, 173, 118, 0.8);
     --bg-footer: rgb(207, 216, 220);
     --font-title: "Telex", sans-serif;
+    --text-shadow: none;
 }
 
 [data-theme="green-dark"] {
@@ -85,6 +92,7 @@
     --color-hover-alpha: rgba(246, 208, 141, 0.8);
     --bg-footer: #212121;
     --font-title: "Telex", sans-serif;
+    --text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
 }
 
 * {
@@ -204,9 +212,9 @@ canvas {
 }
 
 span {
-    text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
-    filter: contrast(200%);
+    text-shadow: var(--text-shadow);
     color: var(--text-color);
+    filter: contrast(200%); 
 }
 
 input[type="text"],

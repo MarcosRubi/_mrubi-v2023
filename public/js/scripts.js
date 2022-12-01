@@ -140,5 +140,7 @@ const observer = new IntersectionObserver(startAnimation, {
 });
 
 const banner = document.querySelector('.banner')
+const footer = document.querySelector('footer')
 
 observer.observe(banner)
+observer.observe(footer)
