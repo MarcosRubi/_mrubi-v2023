@@ -121,6 +121,11 @@ a {
   text-decoration: none;
   color: var(--color-link);
   cursor: pointer;
+  font-weight: 900;
+  transition: color 300ms;
+}
+a:hover {
+  color: var(--color-hover);
 }
 
 li {
@@ -135,9 +140,9 @@ canvas {
 }
 
 .container {
-  max-width: 1440px;
-  margin: 0px auto;
   width: 95%;
+  margin: 0px auto;
+  max-width: 1440px;
 }
 
 .d-flex {
@@ -181,7 +186,7 @@ canvas {
 }
 
 .gsap-animation {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .social-list a {
@@ -191,14 +196,13 @@ canvas {
   font-size: 1.25rem;
 }
 .social-list a:hover {
-  color: var(--color-hover);
   transform: scale(1.25);
 }
 
 span {
-  text-shadow: 0 0 2px var(--color-link), 0 0 5px var(--color-link), 0 0 10px var(--color-link);
+  text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
   filter: contrast(200%);
-  color: #fffcff;
+  color: var(--text-color);
 }
 
 input[type=text],
@@ -679,9 +683,6 @@ textarea {
   display: block;
   padding: 1.5rem;
 }
-.menu nav a:hover {
-  color: var(--color-hover);
-}
 .menu nav a:hover::after {
   width: 100%;
 }
@@ -828,6 +829,11 @@ textarea {
 footer {
   background-color: var(--bg-footer);
   padding: 2rem 0;
+}
+footer .container-footer {
+  width: 95%;
+  margin: 0px auto;
+  max-width: 1440px;
 }
 footer .btn {
   padding: 1.25rem 2.5rem;
@@ -1002,7 +1008,7 @@ footer .char {
   }
 
   footer {
-    min-height: 475px;
+    overflow-x: hidden;
   }
   footer #show-contact {
     display: block;
@@ -1010,21 +1016,29 @@ footer .char {
   footer .container {
     margin-left: 4.1rem;
   }
-  footer .repositories {
-    transition: opacity 1s;
-  }
   footer .right {
-    padding-top: 0;
-    padding-right: 2rem;
-    width: 40%;
+    padding: 0;
   }
   footer .right .contact-form {
     padding-top: 0;
     opacity: 0;
     display: none;
   }
+  footer .right .repositories {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: opacity 1s;
+  }
   footer .left {
-    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-left: 10rem;
+  }
+  footer .left .social-list a {
+    padding: 1rem 1.5rem;
   }
   footer.show-form .contact-form {
     opacity: 1;

@@ -122,6 +122,11 @@ a {
     text-decoration: none;
     color: var(--color-link);
     cursor: pointer;
+    font-weight: 900;
+    transition: color 300ms;
+    &:hover{
+        color: var(--color-hover);
+    }
 }
 
 li {
@@ -137,10 +142,11 @@ canvas {
 
 
 .container {
-    max-width: 1440px;
-    margin: 0px auto;
     width: 95%;
+    margin: 0px auto;
+    max-width: 1440px;
 }
+
 
 .d-flex {
     display: flex;
@@ -183,7 +189,7 @@ canvas {
 }
 
 .gsap-animation {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .social-list a {
@@ -193,15 +199,14 @@ canvas {
     font-size: 1.25rem;
 
     &:hover {
-        color: var(--color-hover);
         transform: scale(1.25);
     }
 }
 
 span {
-    text-shadow: 0 0 2px var(--color-link), 0 0 5px var(--color-link), 0 0 10px var(--color-link);
+    text-shadow: 0 0 2px var(--color-hover-alpha), 0 0 5px var(--color-hover-alpha), 0 0 10px var(--color-hover-alpha);
     filter: contrast(200%);
-    color: #fffcff;
+    color: var(--text-color);
 }
 
 input[type="text"],
