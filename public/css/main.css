@@ -1057,6 +1057,7 @@ footer.visible .right {
 
   footer {
     overflow-x: hidden;
+    min-height: 500px;
   }
   footer #show-contact {
     display: block;
@@ -1067,23 +1068,22 @@ footer.visible .right {
   footer .right {
     padding: 0;
   }
-  footer .right .contact-form {
-    padding-top: 0;
-    opacity: 0;
-    display: none;
-  }
   footer .right .repositories {
+    height: 0px;
+    opacity: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: opacity 1s;
   }
+  footer .right .contact-form {
+    padding-top: 0rem;
+  }
   footer .left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
     padding-left: 10rem;
+  }
+  footer .left .social-list {
+    margin: 2rem 0;
   }
   footer .left .social-list li a {
     padding: 1rem 1.5rem;
@@ -1092,15 +1092,15 @@ footer.visible .right {
     padding-left: 0rem;
   }
   footer.show-form .contact-form {
-    opacity: 1;
-    height: auto;
+    opacity: 0;
+    height: 0px;
     transition: opacity 1s;
-    visibility: visible;
-    display: block;
+    visibility: hidden;
+    display: none;
   }
   footer.show-form .repositories {
-    height: 0px;
-    opacity: 0;
+    height: auto;
+    opacity: 1;
   }
 
   canvas {

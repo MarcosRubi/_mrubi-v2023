@@ -119,9 +119,9 @@ window.onload = () => {
     const btnContact = document.querySelector('#show-contact')
     btnContact.onclick = ()=>{
         document.querySelector('footer').classList.toggle('show-form')
-        btnContact.textContent.includes('Enviar') 
-        ? btnContact.querySelector('span').innerText = "Ver Repositorios" 
-        : btnContact.querySelector('span').innerText = "Enviar Correo"     
+        btnContact.textContent.includes('Ver') 
+        ? btnContact.querySelector('span').innerText = "Enviar Correo" 
+        : btnContact.querySelector('span').innerText = "Ver Repositorios"     
     }
 };
 

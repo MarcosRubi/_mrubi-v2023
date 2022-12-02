@@ -614,6 +614,7 @@ footer {
 
     footer {
         overflow-x: hidden;
+        min-height: 500px;
 
         #show-contact {
             display: block;
@@ -626,27 +627,25 @@ footer {
         .right {
             padding: 0;
 
-            .contact-form {
-                padding-top: 0;
-                opacity: 0;
-                display: none;
-            }
-
             .repositories {
+                height: 0px;
+                opacity: 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 transition: opacity 1s;
+            }
 
+            .contact-form {
+                padding-top: 0rem;
             }
         }
 
         .left {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: space-between;
-            padding-left: 10rem;
+            padding-left:10rem;
+            .social-list{
+                margin: 2rem 0;
+            }
 
             .social-list li{
                 a{
@@ -660,16 +659,16 @@ footer {
 
         &.show-form {
             .contact-form {
-                opacity: 1;
-                height: auto;
+                opacity: 0;
+                height: 0px;
                 transition: opacity 1s;
-                visibility: visible;
-                display: block;
+                visibility: hidden;
+                display: none;
             }
 
             .repositories {
-                height: 0px;
-                opacity: 0;
+                height: auto;
+                opacity: 1;
             }
         }
     }
