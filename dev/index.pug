@@ -99,57 +99,69 @@ html(lang="es" data-theme="")
                 a(href="#" class="btn btn-banner")
                     span Descargar CV
                     i(class="fa fa-download")
-        main
-            canvas(width="100" height="100" id="effectMatrix")
-            footer
-                div(class="d-flex flex-row-xl jc-center p-relative container-footer")
-                    div(class="left")
-                        h2(class="gsap-animation") Listo para 
-                            span contactar?
-                        ul(class="d-flex align-center social-list")
+        main(class="p-relative")
+            canvas(width="100" height="100" id="effectMatrix" class="p-absolute")
+            section(class="projects container")
+                div(class="projects__header")
+                    div(class="d-flex jc-around flex-row-xl")
+                        h2(class="gsap-animation") Mejores proyectos
+                        div(class="projects__description")
+                            p(class="gsap-animation") De los más de 50 proyectos realizados he recopilado los que considero más relevantes.
+                            span Ninguno de estos proyectos fue realizado siguiendo un tutorial, tampoco son proyectos realizados en la universidad.
+        footer
+                div(class="d-flex flex-row-xl jc-between p-relative")
+                    div(class="social")
+                        h2(class="gsap-animation"): span Redes Sociales
+                        ul(class="social-list")
                                 li
-                                    a: i(class="fab fa-linkedin-in")
+                                    a(class="d-flex align-center")
+                                        i(class="fab fa-linkedin-in")
+                                        p Linkedin
                                 li
-                                    a: i(class="fa fa-facebook-f")
+                                    a(class="d-flex align-center")
+                                        i(class="fa fa-facebook-f")
+                                        p Facebook
                                 li
-                                    a: i(class="fa fa-twitter")
+                                    a(class="d-flex align-center")
+                                        i(class="fa fa-twitter")
+                                        p Twitter
                                 li
-                                    a: i(class="fa fa-instagram")
-                        button(class="btn btn-primary" id="show-contact"): span Ver Repositorios
-                    div(class="right")
-                        div(class="repositories")
-                            h2(class="gsap-animation"): span Repositorios
-                            div(class="repositories__item d-flex")
-                                div: i(class="fa fa-github")
-                                div
-                                    span(class="d-block") GitHub
-                                    a(href="#") Visitar 
-                            div(class="repositories__item d-flex")
-                                div: i(class="fa fa-code")
-                                div
-                                    span(class="d-block") Frontend Mentor
-                                    a(href="#") Visitar 
-                            div(class="repositories__item d-flex")
-                                div: i(class="fa fa-codepen")
-                                div
-                                    span(class="d-block") Codepen
-                                    a(href="#") Visitar
-                        div(class="contact-form")
-                            h2(class="gsap-animation"): span Enviar Correo
-                            form(action="#", method="post")
-                                div(class="input-group p-relative")
-                                    input(type="text", name="txtName" id="txtName" required="required")
-                                    label(for="txtName" class="p-absolute") Nombre
-                                    span(class="p-absolute"): i(class="fa fa-user")
-                                div(class="input-group p-relative")
-                                    input(type="email", name="txtEmail" id="txtEmail" required="required")
-                                    label(for="txtEmail" class="p-absolute") Email
-                                    span(class="p-absolute"): i(class="fa fa-envelope")
-                                div(class="input-group p-relative")
-                                    textarea(name="txtMessage", cols="30", rows="5" required="required")
-                                    label(for="txtMessage" class="p-absolute") Mensaje
-                                    span(class="p-absolute"): i(class="fa fa-comment")
-                                button(type="submit" class="btn btn-primary"): span Enviar Mensaje
+                                    a(class="d-flex align-center")
+                                        i(class="fa fa-instagram")
+                                        p Instagram
+                    div(class="contact-form")
+                        h2(class="gsap-animation"): span Enviar Correo
+                        form(action="#", method="post")
+                            div(class="input-group p-relative")
+                                input(type="text", name="txtName" id="txtName" required="required")
+                                label(for="txtName" class="p-absolute") Nombre
+                                span(class="p-absolute"): i(class="fa fa-user")
+                            div(class="input-group p-relative")
+                                input(type="email", name="txtEmail" id="txtEmail" required="required")
+                                label(for="txtEmail" class="p-absolute") Email
+                                span(class="p-absolute"): i(class="fa fa-envelope")
+                            div(class="input-group p-relative")
+                                textarea(name="txtMessage", cols="30", rows="5" required="required")
+                                label(for="txtMessage" class="p-absolute") Mensaje
+                                span(class="p-absolute"): i(class="fa fa-comment")
+                            button(type="submit" class="btn btn-primary"): span Enviar Mensaje
+                    div(class="repositories")
+                        h2(class="gsap-animation"): span Repositorios
+                        div(class="repositories__item d-flex")
+                            div: i(class="fa fa-github")
+                            div
+                                span(class="d-block") GitHub
+                                a(href="#") Visitar 
+                        div(class="repositories__item d-flex")
+                            div: i(class="fa fa-code")
+                            div
+                                span(class="d-block") Frontend Mentor
+                                a(href="#") Visitar 
+                        div(class="repositories__item d-flex")
+                            div: i(class="fa fa-codepen")
+                            div
+                                span(class="d-block") Codepen
+                                a(href="#") Visitar
         script(src="https://unpkg.com/split-type") 
         script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer")
         script(src="js/scripts.js") 

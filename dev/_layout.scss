@@ -369,14 +369,62 @@
 
 }
 
+.projects {
+    padding: 4rem 0;
+
+    .d-flex {
+        align-items: flex-start;
+    }
+
+    h2 {
+        font-size: 2rem;
+
+        .char {
+            transform: translateY(115px);
+            transition: transform .5s;
+        }
+    }
+
+    &__description {
+        font-weight: 900;
+        overflow: hidden;
+
+        p {
+            margin: 1rem 0;
+
+            .word {
+                transform: translateY(50px);
+                transition: transform .5s;
+            }
+        }
+
+        span {
+            font-size: 0.9rem;
+
+            .word {
+                transform: translateY(50px);
+                transition: transform .5s;
+            }
+        }
+    }
+}
+
 footer {
     background-color: var(--bg-footer);
     padding: 2rem 0;
 
-    .container-footer {
+    & > div {
         width: 95%;
         margin: 0px auto;
         max-width: 1440px;
+
+        &>div {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .contact-form {
+        max-width: 500px;
     }
 
     .btn {
@@ -388,41 +436,44 @@ footer {
         }
     }
 
-    #show-contact {
-        display: none;
-    }
-
-    .social-list a {
-        font-size: 2rem;
-    }
-
-    .left {
-        width: 100%;
-
-        .btn {
-            margin: 1.25rem 0;
+    .social-list{
+        display: flex;
+        flex-direction: column;
+        padding-top: 1rem;
+        a{
+            display:flex;
+            align-items: center;
+            padding: 1rem 0;
+            &:first-child{
+                padding-left: 0;
+            }
+            &:hover{
+                transform: translate(0);
+            }
+        }
+        p{
+            font-size: 1rem;
+            padding-left: 0.5rem;
+            opacity: 1;
         }
     }
 
-    .right {
-        padding-top: 4rem;
-        width: 100%;
+    .repositories__item {
+        margin: 2rem 0;
 
-        .repositories__item {
-            margin: 2rem 0;
+        div:first-child {
+            margin-right: 1.25rem;
+            font-size: 2rem;
+            width: 32px;
+            height: 32px;
+        }
 
-            div:first-child {
-                margin-right: 1.25rem;
-                font-size: 2rem;
-                width: 32px;
-                height: 32px;
-            }
-            span{
-                font-size: 1.15rem;
-            }
-            a {
-                font-size: 1.25rem;
-            }
+        span {
+            font-size: 1.15rem;
+        }
+
+        a {
+            font-size: 1.25rem;
         }
     }
 
@@ -430,31 +481,31 @@ footer {
         transform: translateY(115px);
         transition: transform .5s;
     }
+
     .btn,
     .social-list li,
-    .repositories__item,
-    .right{
+    .repositories__item {
         opacity: 0;
     }
-    &.visible{
-        .btn{
+
+    &.visible {
+        .btn {
             animation: fadeIn 2s linear;
             opacity: 1;
         }
-        .social-list li{
+
+        .social-list li {
             animation: fadeIn 2.25s linear;
             opacity: 1;
         }
-        .repositories__item{
+
+        .repositories__item {
             animation: fadeIn 2.5s linear;
             opacity: 1;
         }
-        .social-list li{
+
+        .social-list li {
             @include social-list-animations;
-        }
-        .right{
-            animation: fadeIn 1s linear;
-            opacity: 1;
         }
     }
 }
@@ -612,64 +663,68 @@ footer {
         }
     }
 
+    .projects {
+        padding: 4rem 0;
+
+        .d-flex {
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 3rem;
+            flex-basis: 60%;
+        }
+
+        &__description {
+            flex-basis: 40%;
+            font-weight: 900;
+            overflow: hidden;
+
+            p {
+                margin-bottom: 1rem;
+            }
+
+            span {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
     footer {
-        overflow-x: hidden;
-        min-height: 500px;
-
-        #show-contact {
-            display: block;
+        .social{
+            flex-grow: 1;
         }
-
-        .container {
-            margin-left: 4.1rem;
+        .contact-form,
+        .repositories{
+            flex-grow: 1;
+            padding: 0 2rem;
         }
-
-        .right {
-            padding: 0;
-
-            .repositories {
-                height: 0px;
-                opacity: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                transition: opacity 1s;
-            }
-
-            .contact-form {
-                padding-top: 0rem;
+        .repositories{
+            padding: 0 4rem;
+            order: -1;
+            &__item{
+                margin-bottom: 4rem;
             }
         }
-
-        .left {
-            padding-left:10rem;
-            .social-list{
-                margin: 2rem 0;
-            }
-
-            .social-list li{
-                a{
-                    padding: 1rem 1.5rem;
+        .contact-form{
+            flex-basis: 100%;
+            order: 3;
+        }
+        .social-list{
+            a{
+                padding: 1.25rem 0;
+                &:hover p{
+                    opacity: 1;
+                    animation: toLeft .25s linear, fadeIn .5s linear;
                 }
-                &:first-child a{
-                    padding-left: 0rem;
+                i{
+                    font-size: 2rem;
                 }
             }
-        }
-
-        &.show-form {
-            .contact-form {
+            p{
                 opacity: 0;
-                height: 0px;
-                transition: opacity 1s;
-                visibility: hidden;
-                display: none;
-            }
-
-            .repositories {
-                height: auto;
-                opacity: 1;
             }
         }
+
     }
 }

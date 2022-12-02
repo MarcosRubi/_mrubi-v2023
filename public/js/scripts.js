@@ -23,8 +23,8 @@ const gsapAnimationText = (element, character)=>{
     gsap.to(character,{
         y: 0,
         stagger: 0.05,
-        delay: 0.2,
-        duration: 0.1
+        delay: 0.1,
+        duration: 0.01
     })
 }
 //Fondo del banner
@@ -32,7 +32,7 @@ const effectMatrix = ()=>{
     const bannerBg = document.getElementById('effectMatrix')
     const context = bannerBg.getContext('2d')
 
-    bannerBg.setAttribute('height', window.screen.height)
+    bannerBg.setAttribute('height', document.querySelector('main').offsetHeight)
     bannerBg.width = document.body.offsetWidth
     
     let w = bannerBg.width
@@ -114,15 +114,10 @@ window.onload = () => {
     effectMatrix()
     gsapAnimationText('.banner h1', '.char')
     gsapAnimationText('footer h2', '.char')
+    gsapAnimationText('.projects__header h2', '.char')
+    gsapAnimationText('.projects__header p', '.word')
+    gsapAnimationText('.projects__header span', '.word')
 
-    //Mostrar formulario en vista desktop
-    const btnContact = document.querySelector('#show-contact')
-    btnContact.onclick = ()=>{
-        document.querySelector('footer').classList.toggle('show-form')
-        btnContact.textContent.includes('Ver') 
-        ? btnContact.querySelector('span').innerText = "Enviar Correo" 
-        : btnContact.querySelector('span').innerText = "Ver Repositorios"     
-    }
 };
 
 const startAnimation = (entries, observer) => {

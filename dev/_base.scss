@@ -1,4 +1,4 @@
-// Estilos generales y variables 
+// Estilos generales y variables
 [data-theme="default-light"] {
     --bg-color: #f5f5f5;
     --text-color: #212121;
@@ -8,7 +8,7 @@
     --color-hover-alpha: rgba(6, 196, 158, 0.8);
     --bg-footer: rgb(207, 216, 220);
     --font-title: "Telex", sans-serif;
-    --text-shadow: none; 
+    --text-shadow: none;
 }
 
 [data-theme="default-dark"] {
@@ -32,7 +32,7 @@
     --color-hover-alpha: rgba(60, 143, 157, 0.8);
     --bg-footer: rgb(207, 216, 220);
     --font-title: "Telex", sans-serif;
-    --text-shadow: none; 
+    --text-shadow: none;
 }
 
 [data-theme="purple-dark"] {
@@ -56,7 +56,7 @@
     --color-hover-alpha: rgba(231, 47, 30, 0.8);
     --bg-footer: rgb(207, 216, 220);
     --font-title: "Telex", sans-serif;
-    --text-shadow: none; 
+    --text-shadow: none;
 }
 
 [data-theme="gray-dark"] {
@@ -145,8 +145,8 @@ canvas {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 0;
 }
+
 
 
 .container {
@@ -214,7 +214,7 @@ canvas {
 span {
     text-shadow: var(--text-shadow);
     color: var(--text-color);
-    filter: contrast(200%); 
+    filter: contrast(200%);
 }
 
 input[type="text"],
@@ -232,11 +232,6 @@ textarea {
 textarea {
     padding: .7rem 2rem .7rem 2.5rem;
     resize: none;
-}
-
-.contact-form {
-    padding-top: 2rem;
-    max-width: 500px;
 }
 
 .input-group {
@@ -278,8 +273,8 @@ textarea {
 }
 
 @mixin base-xl {
-    canvas {
-        padding-left: 4.1rem;
+    main{
+        margin-left: 4rem;
     }
 
     main.container {
