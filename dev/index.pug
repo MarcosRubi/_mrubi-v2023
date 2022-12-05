@@ -101,32 +101,52 @@ html(lang="es" data-theme="")
                     i(class="fa fa-download")
         main(class="p-relative")
             canvas(width="100" height="100" id="effectMatrix" class="p-absolute")
-            section(class="projects container")
-                div(class="projects__header")
+            section(class="projects")
+                div(class="projects__header container")
                     div(class="d-flex jc-around flex-row-xl")
                         h2(class="gsap-animation") Mejores proyectos
                         div(class="projects__description")
                             p(class="gsap-animation") De los más de 50 proyectos realizados he recopilado los que considero más relevantes.
-                            span Ninguno de estos proyectos fue realizado siguiendo un tutorial, tampoco son proyectos realizados en la universidad.
+                            p(class="gsap-animation") Ninguno de estos proyectos fue realizado siguiendo un tutorial, tampoco son proyectos realizados en la universidad.
+                div(class="projects__container")
+                    div(class="projects__item pintelog")
+                        div(class="d-flex flex-row-xl container")
+                            div(class="information")
+                                h3 Pintelog 
+                                p Tecnología empleada: 
+                                ul
+                                    li HTML usando el pre-procesador PUG
+                                    li CSS usando el pre-procesador SASS
+                                    li JavaScript usando XMLHTTPRequest
+                                    li PHP Usando la programación orientada a objetos
+                                p Tiempo de desarrollo
+                                ul
+                                    li 11 de Junio del 2022 al 07 de Julio del 2022
+                            div(class="learning")
+                                p Las principales dificultades al realizar este proyecto fue la estructura de archivos ya que es el primer proyecto complejo, dentro de lo cabe que realizo, implementando un sistema de inicio de sesión, registro, crear publicaciones, buscar usuarios, añadir fotos a favoritos, editar usuario, eliminar publicaciones, entre otros funcionamientos.
+                                p Mi aprendizaje con este proyecto fue usar las librerías de Dotenv para variables de entorno y PHPMailer para el envío de emails.
+                            div(class="links")
+                                a(href="#" class="btn btn-primary"): span Ver Demo 
+                                a(href="#" class="btn btn-secondary"): span Ver Código 
         footer
                 div(class="d-flex flex-row-xl jc-between p-relative")
                     div(class="social")
                         h2(class="gsap-animation"): span Redes Sociales
                         ul(class="social-list")
                                 li
-                                    a(class="d-flex align-center")
+                                    a( href="#" class="d-flex align-center")
                                         i(class="fab fa-linkedin-in")
                                         p Linkedin
                                 li
-                                    a(class="d-flex align-center")
+                                    a( href="#" class="d-flex align-center")
                                         i(class="fa fa-facebook-f")
                                         p Facebook
                                 li
-                                    a(class="d-flex align-center")
+                                    a( href="#" class="d-flex align-center")
                                         i(class="fa fa-twitter")
                                         p Twitter
                                 li
-                                    a(class="d-flex align-center")
+                                    a( href="#" class="d-flex align-center")
                                         i(class="fa fa-instagram")
                                         p Instagram
                     div(class="contact-form")

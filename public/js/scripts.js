@@ -55,7 +55,7 @@ const effectMatrix = ()=>{
         context.clearRect(0,0,w,h)
 
         context.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-link');
-        context.font = '10pt Telex'
+        context.font = '6pt Telex'
 
         positionY.forEach((y, index)=>{
             const text = String.fromCharCode(Math.random()*128)
